@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Static Content Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+
+		<style type="text/css">
+			.mod_static_content h4 {color:#025A8D;}
+			.mod_static_content ol li {list-style-type: decimal; margin-left:20px;}
+			.mod_static_content .red {color:red;}
+			.mod_static_content strong {color:black;}
+		</style>
+		
+		<div class="mod_static_content">
+			<p>This module has multiple functionalities and will display texts, videos, all sorts of things in different layout.</p>
+			<p>Most of the features are shortcodes based so try to read the documentation for each shortcode.</p>
+		
+			<p>Because some browsers don't recognize only mp4 or flv files, it's better to convert your flv/mp4 also to .ogg (ogv) files for every browser to support this player.</p>
+			<p><strong>To convert online your mp4 file to ogg // flv to mp4 // ogg to flv // etc. etc.</strong> (or viceversa, or any filetype you want, even songs from youtube), you can use this extraordinary online tool <a href="http://video.online-convert.com/" target="_blank">http://video.online-convert.com/</a>.</p>
+			<h4>Instructions (to enable uploading mp4, webm, flv & ogg/ogv files): &lt;&lt;- Read first!!</h4>
+			<ol>
+				<li>Go to <strong>Media Manager</strong></li>
+				<li>Click the button <strong>Options</strong> from the right top toolbar, there's an icon there.</li>
+				<li>Inside the <strong>Legal Extensions (File Types)</strong> field, add this: <strong>mp4, flv, ogg, ogv, webm, MP4, FLV, OGG, OGV, WEBM</strong></li>
+				<li>If this doesn't work, use a FTP Client, go to images folder, there create a folder called 'videos' and upload your fideos there</li>
+				<li>Create a folder called "<span class="red">video</span>" and inside it upload the mp3, flv & ogg/ogv files. Why this folder? Because inside the module's parameters, the dropdown filelists point to this video folder. <strong>This is mandatory!!!</strong></li>
+			</ol>
+		</div>
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_staticcontent">mod_hg_staticcontent.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_staticcontent.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params"> 
+			<fieldset name="basic" addfieldpath="plugins/system/hg_assets/assets/formfield">
+				
+				<field name="modstyle" type="list" label="Choose Style" description="Choose the style/layout you want" default="default">
+					<option value="default">1) Default</option>
+					<option value="boxes">2) Boxes Layout</option>
+					<option value="video">3) Video Popup</option>
+					<option value="maps">4) Maps Layout</option>
+					<option value="textpop">5) Text Pop</option>
+					<option value="loupe">6) Product Loupe</option>
+					<option value="countdown">7) Event Countdown</option>
+					<option value="video_background">8) Video Background</option>
+					<option value="text_login">9) Text and Login/Register</option>
+					<option value="simple_text">10) Simple text</option>
+				</field>
+
+			</fieldset>
+			 
+			<fieldset name="default" label="Default Layout">
+				<field name="default_bg" type="media" label="Background Image" default="" description="Background image displayed." />
+				<field name="default_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="default_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+			</fieldset>
+			
+			<fieldset name="boxes" label="Boxes Layout">
+				<field name="boxes_bg" type="media" label="Background Image" default="" description="Background image displayed." />
+				<field name="boxes_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="boxes_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+				<field name="boxes_items" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Boxes Manager" itemnname="Box"> 
+					<option name="vals" type="hidden" value="" />
+					<option name="title" type="text" value="" label="Box Title" class="input-xlarge" />
+					<option name="icon" type="media" value="" label="Choose Icon" description="Add an icon" />
+					<option name="linkurl" type="texturl" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option name="boxtext" type="textarea" value="" class="input-xlarge" label="Box Text" rows="4" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="video" label="Video Popup Layout">
+				<field name="video_bg" type="media" label="Background Image" default="" description="Background image displayed." />
+				<field name="video_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="video_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+			</fieldset>
+			
+			<fieldset name="maps" label="Maps Layout">
+				<field name="maps_height" type="text" label="Map Height" default="600" description="Map Height (px)" />
+				<field name="maps_controls" type="list" label="Enable Controls?" default="1" description="Enable cusstom controls? Zoom in/out and Refresh.">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="maps_controlsType" type="list" label="Controls Type" default="HORIZONTAL_BAR" description="Maps Controls Type">
+					<option value="DROPDOWN_MENU">Dropdown menu</option>
+					<option value="HORIZONTAL_BAR">Horizontal Bar</option>
+				</field>
+				<field name="maps_type" type="list" label="Maps Type" default="HORIZONTAL_BAR" description="Maps Controls Type">
+					<option value="ROADMAP">Roadmap</option>
+					<option value="TERRAIN">Terrain</option>
+					<option value="SATELLITE">Satellite</option>
+					<option value="HYBRID">Hybrid</option>
+				</field>
+				<field name="maps_zoom" type="text" label="Map Zoom" default="14" description="Map Zoom" />
+				<field name="maps_center" type="text" label="Map Center" default="40.712785,-73.962708" description="Map Center. Use comma to sepparate latitude and longitude. This will be the point where the map center's itself." />
+				<field name="maps_dragging" type="list" label="Enable Dragging" default="1" description="Enable Maps Dragging?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="maps_mousewheel" type="list" label="Enable Mousewheel" default="0" description="Enable Maps Mousewheel?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="maps_pin" type="media" label="Map Pin Image" default="" description="Browse for image" />
+				<field name="maps_coordinates" type="textarea" rows="5" label="Maps Pin Coordinates" default="" description="Use comma to sepparate latitude and longitude and new line to add another pin on the map." class="input-xlarge" />
+				
+				<field type="spacer" label="Contents within the maps" />
+				<field name="maps_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="150" />
+			</fieldset>
+			
+			<fieldset name="textpop" label="TextPop Layout">
+				<field name="textpop_bg" type="media" label="Background Image" default="" description="Background image displayed." />
+				<field name="textpop_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="textpop_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+			</fieldset>
+			
+			<fieldset name="loupe" label="Product Loupe Layout">
+				<field name="loupe_image" type="media" label="Upload Image (~1180x742)" default="" description="Image that will be used in the right side Magnifier. It will be automatically resized to fit the frame." />
+				<field name="loupe_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+			</fieldset>
+			
+			<fieldset name="countdown" label="Event Countdown Layout">
+				<field name="countdown_bg" type="media" label="Background Image" default="" description="Background image displayed." />
+				<field name="countdown_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="countdown_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="320" />
+			</fieldset>
+			
+			<fieldset name="video_background" label="Video Background Layout">
+				<field name="video_type" type="list" label="Video Type" default="self_hosted" description="Choose the video type.">
+					<option value="self_hosted">Self Hosted Video</option>
+					<option value="youtube">YouTube</option>
+					<option value="vimeo">Vimeo</option>
+				</field>
+
+				<field name="videobg_mp4" type="filelist" directory="images/videos" label="MP4 Source" description="Select .mp4 video source. Used for Internet Explorer 9+, Chrome 6+, Safari 5+" />
+				<field name="videobg_webm" type="filelist" directory="images/videos" label="WEBM Source" description="Select .webm video source. Used for Chrome 6+, Firefox 3.6+, Opera 10.6+" />
+				<field name="videobg_ogg" type="filelist" directory="images/videos" label="OGG Source" description="Select .ogg video source. Used for Chrome 6+, Firefox 3.6+, Opera 10.6+" />
+				<field name="videobg_flv" type="filelist" directory="images/videos" label="FLV Source" description="Select .flv video source. Used for Flash Player fallback." />
+				<field name="videobg_image" type="filelist" directory="images/videos" label="Backup Image Source" description="Select backup image video source." />
+				<field name="videobg_captions" type="textarea" rows="5" label="Caption 1" default="" description="Add ca caption here. New line to separate caption." class="input-xlarge" /> 
+				<field name="videobg_autplay" type="list" label="Autoplay?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="videobg_loop" type="list" label="Loop video?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="videobg_controls" type="list" label="Display Controls?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="videobg_containerheight" type="text" label="Container height" default="600" description="Container height" />
+				<field name="videobg_width" type="text" label="Video width" default="100%" description="Video width" />
+				<field name="videobg_hwight" type="text" label="Container height" default="auto" description="If you plan adding in pixels please add with px, eg: 400px ." />
+				<field name="youtubeid" type="text" label="Youtube ID" default="" description="Add the Youtube Video ID" />
+				<field name="vimeoid" type="text" label="Vimeo ID" default="" description="Add the Vimeo Video ID" />
+			</fieldset>
+			
+			<fieldset name="text_login" label="Text &amp; Register Layout">
+				<field name="text_login_bg" type="media" label="Background Image" default="" description="Background image displayed." />
+				<field name="text_login_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="text_login_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+				
+				<field type="spacer" label="Register Texts" class="title"/>
+				<field name="text_login_form_title" type="text" label="Form Title" description="Form's title" class="input-xlarge" filter="raw" />
+				<field name="text_login_9" label="Username" type="text" default="Username" description="Username - placeholder" class="input-xlarge" />
+				<field name="text_login_10" label="Your full name" type="text" default="Name" description="Your full name - placeholder" class="input-xlarge" />
+				<field name="text_login_11" label="Your email" type="text" default="Email" description="Your email - placeholder" class="input-xlarge" />
+				<field name="text_login_16" label="Verifiy email" type="text" default="Verifiy email" description="Verifiy email - placeholder" class="input-xlarge" />
+				<field name="text_login_12" label="Desired password" type="text" default="Password" description="Desired password - placeholder" class="input-xlarge" />
+				<field name="text_login_13" label="Confirm password" type="text" default="Confirm password" description="Confirm password - placeholder" class="input-xlarge" />
+				<field name="text_login_14" label="REGISTER" type="text" default="REGISTER" description="REGISTER - button label" class="input-xlarge" />
+			</fieldset>
+			
+			<fieldset name="simple_text" label="Simple text Layout">
+				<field name="simple_text_minheight" type="text" label="Minimum Container Height" default="400" description="Minimum container height (px)" />
+				<field name="simple_text_content" type="editor" label="Content" default="" description="Add content here" filter="raw" height="250" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<element type="jlcommentsprozooel" group="Social">
+	<name>JLCommentsPro Zoo Element</name>
+	<author>JoomLine</author>
+	<creationDate>June, 2013</creationDate>
+	<copyright>(C) 2012-2013 by Zhukov Artem (http://www.joomline.ru)</copyright>
+	<authorEmail>artem@joomline.ru</authorEmail>
+	<authorUrl>http://joomline.ru</authorUrl>
+	<version>2.0</version>
+	<description>Plugin allow integrate VK comments and Facebook comments into your ZOO components</description>
+	<params>	
+		<param name="default" type="radio" default="1" label="Enabled By Default" description="Enabled by default">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</param>
+		<param name="name" type="text" default="" label="Name" description="" />		
+		<param name="showvkontakte" type="radio" default="0" label="Enable tab VKontakte" description="Display tab of social network Vkontakte">
+		  <option value="0">JNO</option>
+		  <option value="1">JYES</option>
+		</param>
+		<param name="labelvk" type="text" label="Title for Vkontakte" default="Vk"/>
+		<param name="showfacebook" type="radio" default="0" label="Enable tab FaceBook" >
+		  <option value="0">JNO</option>
+		  <option value="1">JYES</option>
+		</param>
+		<param name="labelfc" type="text" label="Title for Facebook" default="FaceBook"/>
+		<param name="showjcomments" type="radio" default="0" label="Enable tab JComments">
+		  <option value="0">JNO</option>
+		  <option value="1">JYES</option>
+		</param>
+		<param name="labeljc" type="text" label="Title for JComments" default="Comments"/>
+		<param name="orders" type="text" label="The order of the tabs" default="1,2,3" description="1 - Jcomments, 2 - Vkontakte, 3 -   Facebook"/>
+		<param name="showcounter" type="radio" default="1" label="Count of comments JComments" description="Display the number of comments JComments">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</param>
+		<param name="apiId" type="text" label="API ID Vkontakte" default="API ID"/>	
+		<param name="width" type="text" label="Width comments" default="500" description="Enter comments or width of the block. If you specify 0 - then the width of the page"/>
+		<param name="comLimit" type="text" label="Number of comments" default="10"/>
+		<param name="attach" type="list" default="*" label="Attach a file" description="Specifies the ability to create attachments to the comments">
+		  <option value="*">all</option>
+		  <option value="false">disable</option>
+		  <option value="graffiti">graffiti</option>
+		  <option value="photo">photo</option>
+		  <option value="audio">audio</option>
+		  <option value="video">video</option>
+		  <option value="link">links</option>
+		</param>
+		<param name="autoPublish" type="radio" default="1" label="Auto publication" description="Automatic publishing a comment to the status of the user">
+		  <option value="0">JNO</option>
+		  <option value="1">JYES</option>
+		</param>
+		<param name="norealtime" type="radio" default="0" label="Auto-update" description="Updating the tape in real-time comments">
+		  <option value="1">JNO</option>
+		  <option value="0">JYES</option>
+		</param>
+		<param name="fbId" type="text" label="ID Facebook" default=""/>
+		<param name="fbadmin" type="text" label="Moderators Facebook" description="Enter the user names separated by commas" default=""/>
+		<param name="fb_lang" type="list" default="ru_RU" label="Language of Facebook" description="Choose the language widget">
+		  <option value="ru_RU">Russian</option>
+		  <option value="en_US">English</option>
+		</param>
+		<param name="typeviewer" type="list" default="0" label="Type of display" description="If the first option does not work. Specify a second and try again.">
+		  <option value="0">jquery</option>
+		  <option value="1">mootools</option>
+		</param>
+		<param name="jqload" type="radio" default="1" label="Load the JQuery library" description="Load the JQuery library, version 1.7.1">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</param>
+		<param name="unic" type="radio" default="0" label="Mode uniqueness comments" description="Setting id comment. Old - binding mode is used not only to the comment ID of the article but also to the menu item ID. New - in this mode, the comments attached to the article ID and some static prefix (It is recommended that if the plugin has not previously been used, or used plug JL Comments).">
+		  <option value="1">New</option>
+		  <option value="0">Old</option>
+		</param>
+		
+	</params>	
+</element>

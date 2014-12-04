@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Team Manager Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module will display the team members from your company in a grid-style, hovered with content effect.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_team">mod_hg_team.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_team.xml</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="teammanager" label="Team Manager">
+				
+				<field name="perrow" type="text" label="Members Per Row?" default="4" description="How many Team members should be displayed on each row." />
+				<field name="grayscale" type="list" label="Enable Grayscale Effect?" default="1" description="Enable Grayscale Effect on hover?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>	
+				<field name="team" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Team Members Manager" itemnname="Member"> 
+					<option type="hidden" name="vals" value="" />
+					<option name="img" type="media" value="" label="Browse for image" />
+					<option name="title" type="text" value="" class="input-xlarge" label="Member Name" />
+					<option name="position" type="text" value="" class="input-xlarge" label="Member Position" description="Member position in the company" />
+					<option name="desc" type="textarea" rows="4" filter="raw" value="" class="input-xlarge" label="Member description" />
+					<option name="contact" type="textarea" rows="10" filter="raw" value="" class="input-xxlarge" label="Member Contact details" />
+					
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+				<!-- Basic settings -->
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

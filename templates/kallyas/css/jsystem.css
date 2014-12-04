@@ -1,0 +1,307 @@
+/* JSYSTEM CSS // JOOMLA GENERIC STYLES
+*********************************************/
+
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {border:0; font-size:100%; margin:0; padding:0;}
+a {outline:none;}
+table {border-collapse:collapse; border-spacing:0;}
+fieldset,img {border:0;}
+img {vertical-align:bottom;}
+del,ins {text-decoration:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0; font-variant:normal;}
+sup,sub {height:0; line-height:1; vertical-align:baseline; _vertical-align:bottom; position:relative;}
+sup {bottom:1ex;}
+sub {top:.5ex;}
+legend {color:#000;}
+input,button,textarea,select,optgroup,option {font-family:inherit; font-size:inherit; font-style:inherit; font-weight:inherit;}
+input,button,textarea,select {font-size:100%;}
+
+/**
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+ 
+/* System Messages */
+#system-message {
+    margin-bottom: 10px;
+    padding: 0;
+}
+ 
+#system-message > dt {
+    font-weight: bold;
+    display: none;
+}
+ 
+#system-message > dd {
+    margin: 0;
+    font-weight: bold;
+    text-indent: 30px;
+}
+ 
+#system-message > dd > ul {
+    color: #0055BB;
+    background-position: 4px top;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 10px;
+    border-top: 3px solid #84A7DB;
+    border-bottom: 3px solid #84A7DB;
+}
+ 
+#system-message > dd > ul > li {
+    line-height: 1.5em;
+}
+ 
+/* System Standard Messages */
+#system-message > .message > ul {
+    background-color: #C3D2E5;
+    background-image: url(../images/notice-info.png);
+}
+ 
+/* System Error Messages */
+#system-message > .error > ul,
+#system-message > .warning > ul,
+#system-message > .notice > ul {
+    color: #c00;
+}
+ 
+#system-message > .error > ul {
+    background-color: #E6C0C0;
+    background-image: url(../images/notice-alert.png);
+    border-color: #DE7A7B;
+}
+ 
+/* System Warning Messages */
+#system-message > .warning > ul {
+    background-color: #E6C8A6;
+    background-image: url(../images/notice-note.png);
+    border-color: #FFBB00;
+}
+ 
+/* System Notice Messages */
+#system-message > .notice > ul {
+    background-color: #EFE7B8;
+    background-image: url(../images/notice-note.png);
+    border-color: #F0DC7E;
+}
+
+/**
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+ 
+/* Import project-level system CSS */
+@import url(../../../media/system/css/system.css);
+ 
+/* Unpublished */
+.system-unpublished, tr.system-unpublished {
+    background: #e8edf1;
+    border-top: 4px solid #c4d3df;
+    border-bottom: 4px solid #c4d3df;
+}
+ 
+span.highlight {
+    background-color:#FFFFCC;
+    font-weight:bold;
+    padding:1px 4px;
+}
+ 
+.img-fulltext-float-right {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+ 
+.img-fulltext-float-left {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+ 
+.img-fulltext-float-none {
+}
+ 
+.img-intro-float-right {
+    float: right;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+ 
+.img-intro-float-left {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+ 
+.img-intro-float-none {
+}
+
+/**
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+ 
+/* Form validation */
+.invalid { border-color: #ff0000; }
+label.invalid { color: #ff0000; }
+ 
+/* Buttons */
+#editor-xtd-buttons {
+    padding: 5px;
+}
+ 
+.button2-left,
+.button2-right,
+.button2-left div,
+.button2-right div {
+    float: left;
+}
+ 
+.button2-left a,
+.button2-right a,
+.button2-left span,
+.button2-right span {
+    display: block;
+    height: 22px;
+    float: left;
+    line-height: 22px;
+    font-size: 11px;
+    color: #666;
+    cursor: pointer;
+}
+ 
+.button2-left span,
+.button2-right span {
+    cursor: default;
+    color: #999;
+}
+ 
+.button2-left .page a,
+.button2-right .page a,
+.button2-left .page span,
+.button2-right .page span {
+    padding: 0 6px;
+}
+ 
+.page span {
+    color: #000;
+    font-weight: bold;
+}
+ 
+.button2-left a:hover,
+.button2-right a:hover {
+    text-decoration: none;
+    color: #0B55C4;
+}
+ 
+.button2-left a,
+.button2-left span {
+    padding: 0 24px 0 6px;
+}
+ 
+.button2-right a,
+.button2-right span {
+    padding: 0 6px 0 24px;
+}
+ 
+.button2-left {
+    background: url(../images/j_button2_left.png) no-repeat;
+    float: left;
+    margin-left: 5px;
+}
+ 
+.button2-right {
+    background: url(../images/j_button2_right.png) 100% 0 no-repeat;
+    float: left;
+    margin-left: 5px;
+}
+ 
+.button2-left .image {
+    background: url(../images/j_button2_image.png) 100% 0 no-repeat;
+}
+ 
+.button2-left .readmore,
+.button2-left .article {
+    background: url(../images/j_button2_readmore.png) 100% 0 no-repeat;
+}
+ 
+.button2-left .pagebreak {
+    background: url(../images/j_button2_pagebreak.png) 100% 0 no-repeat;
+}
+ 
+.button2-left .blank {
+    background: url(../images/j_button2_blank.png) 100% 0 no-repeat;
+}
+ 
+/* Tooltips
+div.tooltip {
+    float: left;
+    background: #ffc;
+    border: 1px solid #D4D5AA;
+    padding: 5px;
+    max-width: 200px;
+    z-index:13000;
+}
+ 
+div.tooltip h4 {
+    padding: 0;
+    margin: 0;
+    font-size: 95%;
+    font-weight: bold;
+    margin-top: -15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background: url(../images/selector-arrow.png) no-repeat;
+}
+ 
+div.tooltip p {
+    font-size: 90%;
+    margin: 0;
+}
+*/
+ 
+/* Caption fixes */
+/* Caption fixes */
+.img_caption .left {
+        float: left;
+        margin-right: 1em;
+}
+ 
+.img_caption .right {
+        float: right;
+        margin-left: 1em;
+}
+ 
+.img_caption .left p {
+        clear: left;
+        text-align: center;
+}
+ 
+.img_caption .right p {
+        clear: right;
+        text-align: center;
+}
+ 
+.img_caption  {
+    text-align: center!important;
+}
+ 
+.img_caption.none {
+    margin-left:auto;
+    margin-right:auto;
+}
+ 
+ 
+/* Calendar */
+a img.calendar {
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+    background: url(../images/calendar.png) no-repeat;
+    cursor: pointer;
+    vertical-align: middle;
+}

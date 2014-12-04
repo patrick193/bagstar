@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/module-install.dtd">
+<install type="module" version="1.5.0">
+    <name>HG VirtueMart Products Carousel</name>
+    <creationDate>March 17 2013</creationDate>
+    <author>The VirtueMart Development Team</author>
+    <authorUrl>http://www.virtuemart.net</authorUrl>
+    <copyright>Copyright (C) 2004-2012 Virtuemart Team. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>2.0.20b</version>
+    <description>Displays products such as Best sales, Featured products, Last products, Random products</description>
+    <files>
+		<filename module="mod_hg_vm_products_carousel">mod_hg_vm_products_carousel.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+    </files>
+
+    <config>
+	<fields name="params">
+	    <fieldset name="basic" addfieldpath="/administrator/components/com_virtuemart/elements">
+		
+			<field name="modstyle" type="list" default="default" label="Mod Layout" description="Module Layout">
+				<option value="default">Default</option>
+				<option value="carousel">Carousel</option>
+				<option value="limitedoffers">Limited Offers Carousel</option>
+			</field>
+			
+			<field name="product_group" type="list" default="featured" label="Display" description="Select the type of product you would like to display">
+				<option value="featured">Featured Products</option>
+				<option value="latest">Latest Products</option>
+				<option value="random">Random Products</option>
+				<option value="topten">Best Sales</option>
+			</field>
+			<field name="max_items" type="text" default="8" label="Number of displayed products" description="Choose the number of products that will be displayed in the module." />
+			<field name="show_price" type="list" default="1" label="Show Product Price?" description="Defines wether the product price is displayed or not.">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="show_addtocart" type="list" default="1" label="Show Add-To-Cart Link?" description="Defines wether the Add-To-Cart Link is displayed or not.">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="@spacer" type="spacer" default="" label="" description="" />
+
+			<field name="filter_category" type="list" default="0" label="Use category filter" description="Show only the product from this category?">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="virtuemart_category_id" type="vmcategories"  value_field="category_name" label="Category" description="Select the category to choose the products from." />
+			<field name="customitemid" type="text" default="" label="Custom Item ID ?" description="Add a custom Item ID. The problem is that the product page that the products within the carousel will link to, will inherit the modules. To prevent that, either add an Item ID." />
+	    </fieldset>
+	    <fieldset name="advanced">
+			<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			<field name="class_sfx" type="text" default="" label="Menu Class Suffix" description="A suffix to be applied to the css class of the menu items" />
+			<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+	    </fieldset>
+	</fields>
+    </config>
+</install>

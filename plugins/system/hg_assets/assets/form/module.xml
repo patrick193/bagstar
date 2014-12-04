@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <config>
+        <fields name="params">
+
+			<fieldset addfieldpath="/plugins/system/hg_assets/assets/formfield" name="grid-kaltheme" label="Grid and layout options">
+				<field type="asset" name="asset" path="/plugins/system/hg_assets/assets/" />
+
+				<field type="spacer" hr="true" />
+				<field type="spacer" name="spacer_general" label="The grid is composed by 12 columns. Each column has 70px! " class="fulltitle" />
+				
+				<field name="gridlist" type="list" default="" label="Choose GRID type" description="Choose how many columns should this module take." class="nicelist">
+					<option value="">-- Choose GRID --</option>
+					<option value="span1">1 (One) Column // shortcode = [grid1]</option>
+					<option value="span2">2 (Two) Columns // shortcode = [grid2]</option>
+					<option value="span3">3 (Three) Columns // shortcode = [grid3]</option>
+					<option value="span4">4 (Four) Columns // shortcode = [grid4]</option>
+					<option value="span5">5 (Five) Columns // shortcode = [grid5]</option>
+					<option value="span6">6 (Six) Columns // shortcode = [grid6]</option>
+					<option value="span7">7 (Seven) Columns // shortcode = [grid7]</option>
+					<option value="span8">8 (Eight) Columns // shortcode = [grid8]</option>
+					<option value="span9">9 (Nine) Columns // shortcode = [grid9]</option>
+					<option value="span10">10 (Ten) Columns // shortcode = [grid10]</option>
+					<option value="span11">11 (Eleven) Columns // shortcode = [grid11]</option>
+					<option value="span12">12 (Twelve) Columns // shortcode = [grid12]</option>
+					<option value="span4">1/3 One Third // shortcode = [onethird]</option>
+					<option value="span8">2/3 Two Thirds // shortcode = [twothirds]</option>
+				</field>
+
+				<field name="grid_offset" type="list" default="" label="Choose GRID Offset" description="You can move right the module choosing how many columns to offset.">
+					<option value="">-- Choose Grid Offset --</option>
+					<option value="offset1">Offset by One Column</option>
+					<option value="offset2">Offset by Two Columns</option>
+					<option value="offset3">Offset by Three Columns</option>
+					<option value="offset4">Offset by Four Columns</option>
+					<option value="offset5">Offset by Five Columns</option>
+					<option value="offset6">Offset by Six Columns</option>
+					<option value="offset7">Offset by Seven Columns</option>
+					<option value="offset8">Offset by Eight Columns</option>
+					<option value="offset9">Offset by Nine Columns</option>
+					<option value="offset10">Offset by Ten Columns</option>
+					<option value="offset11">Offset by Eleven Columns</option>
+				</field>
+				
+				<field name="heading_class" type="text" label="Title Class" default="" description="The class of the heading title of the module." />
+			</fieldset>
+        </fields>
+    </config>
+</form>

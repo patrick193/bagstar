@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <config>
+        <fields name="attribs">
+
+			<fieldset name="portfolio-kaltheme" label="Portfolio Article Options">
+			
+				<field type="spacer" name="spacer_general" label="This options are available only when used with a portfolio category." class="fulltitle" />
+				
+				<field name="pt_image" label="Portfolio Item Main Image" description="Select the main image for your portfolio item. " type="media"  />
+				
+				<field type="spacer" hr="true" />
+				<field type="spacer" label="Url in category view" class="fulltitle" />
+				<field name="pt_urltype" type="list" default="0" label="URL Type" description="Choose what type of url should this portfolio item to have (&lt;b&gt;IN CATEGORY VIEW&lt;/b&gt;).">
+					<option value="0">Portfolio item page</option>
+					<option value="1">Image (PrettyPhoto lightbox)</option>
+					<option value="2">Youtube</option>
+					<option value="3">Vimeo</option>
+					<option value="4">External URL</option>
+					<option value="5">NO URL</option>
+				</field>	
+				<field name="pt_url" type="text" label="External URL" description="In case you choosed External URL, add the url you want to be opened when portfolio item's image is clicked" size="45" />
+				<field name="pt_videoid" type="text" label="Video ID" description="In case you choosed Youtube or Vimeo, add the video's ID you want to be opened inside the prettyphoto lightbox. The video's id" size="45" />
+				<field name="pt_image_full" label="Portfolio full image" description="If you choosed Image inside the URL Type list, please select an image that will be opened in Prettyphoto lightbox. If you don't point any image, the lightbox will point to the image that's being loaded in the 'Portfolio item image' field." type="media"  />
+				<field type="spacer" hr="true" />
+				
+				<field type="spacer" label="Other data" class="fulltitle" />
+				<field name="pt_livepreview" type="text" label="Live preview URL" description="Live preview url. This will link to the website/link of your live project." size="45" />
+				<field name="pt_collaborators" type="text" label="Collaborators" description="Write here collaborators who helped you with this project" size="45" />
+				<field name="pt_social" type="radio" default="0" label="Social sharing" description="Display the social sharing links (Like, tweet, google plus)">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="full_align" type="radio" default="1" label="Img align in item view" description="">
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				
+				<field type="spacer" label="Other images or media." class="fulltitle" />
+				<field name="pt_image_01" label="Other 01 (Image)" description="Other image" type="media" />
+				<field name="pt_media_01" label="Other 01 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_02" label="Other 02 (Image)" description="Other image" type="media" />
+				<field name="pt_media_02" label="Other 02 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_03" label="Other 03 (Image)" description="Other image" type="media" />
+				<field name="pt_media_03" label="Other 03 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_04" label="Other 04 (Image)" description="Other image" type="media" />
+				<field name="pt_media_04" label="Other 04 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_05" label="Other 05 (Image)" description="Other image" type="media" />
+				<field name="pt_media_05" label="Other 05 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_06" label="Other 06 (Image)" description="Other image" type="media" />
+				<field name="pt_media_06" label="Other 06 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_07" label="Other 07 (Image)" description="Other image" type="media" />
+				<field name="pt_media_07" label="Other 07 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_08" label="Other 08 (Image)" description="Other image" type="media" />
+				<field name="pt_media_08" label="Other 08 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_09" label="Other 09 (Image)" description="Other image" type="media" />
+				<field name="pt_media_09" label="Other 09 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<field name="pt_image_10" label="Other 10 (Image)" description="Other image" type="media" />
+				<field name="pt_media_10" label="Other 10 (Media)" description="Other media, meaning Youtube or Vimeo video. You only have to add the video's ID code." type="text" size="30" />
+				<field type="spacer" hr="true" />
+				<!--<field name="article_layout" type="hidden" value="ekho:portfolio" />-->
+			</fieldset>
+		
+        </fields>
+    </config>
+</form>

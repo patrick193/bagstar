@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Skills Diagram Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on <a href="http://tympanus.net/codrops/2011/04/22/animated-skills-diagram/" target="_blank">Animated Skills Diagram with Raphael</a> by <a href="http://tympanus.net/codrops/" target="_blank">Codrops</a> and converted to Joomla by Marius Hogas. The idea is very simple: we will draw some arcs using mathematical functions and we’ll be displaying a skill percentage in a main circle when we hover over those arcs.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_skillsdiagram">mod_hg_skillsdiagram.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_skillsdiagram.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<field name="align" type="list" label="Diagram Alignment" default="none" description="Diagram Alignment in the page. Will actually just add a float" >
+					<option value="none">None</option>
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+					
+				</field>
+				<field name="width" type="text" class="input-mini" label="Width" default="600" description="Diagram width" />
+				<field name="height" type="text" class="input-mini" label="Height" default="600" description="Diagram height" />
+				<field name="maincolor" type="text" class="input-small" label="Main color" default="#193340" description="Main Color, the color from the inner circle." />
+				<field name="maintext" type="text" class="input-xlarge" label="Main Text" default="Skills" description="Main Text, that appears in the center" />
+				<field name="mainfont" type="text" class="input-xlarge" label="Font data" default="20px Arial" description="Font and size" />
+				<field name="textcolor" type="text" class="input-xlarge" label="Text color" default="#ffffff" description="Text color" />
+				<field name="show_legend" type="list" label="Show Legend?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="legend_title" type="text" class="input-xlarge" label="Legend text" default="Legend:" description="Legend text" />
+
+			</fieldset>
+			 
+			<fieldset name="skills" label="Skills Manager" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			
+				<field name="skills" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Skills Manager" itemnname="Skills"> 
+					<option type="hidden" name="vals" value="" />
+					<option name="title" type="text" value="" class="input-xlarge" label="Title" />
+					<option name="percentage" type="text" value="" class="input-medium" label="Percentage" placeholder="ex: 50" />
+					<option name="color" type="text" value="" class="input-medium" label="Color" placeholder="ex: #EDEBEE" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

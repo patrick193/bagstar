@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="adsmanagercontent" method="upgrade">
+	<name>JoomLine comments Pro v2.7 for ADSManager</name>
+	<author>JoomLine</author>
+	<creationDate>June, 2013</creationDate>
+	<copyright>(C) 2012 by Zhukov  Artem (http://www.joomline.ru)</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>vadim@joomline.ru</authorEmail>
+	<authorUrl>http://joomline.ru</authorUrl>
+	<version>2.7</version>
+	<description>Plugin allow integrate VK comments and Facebook comments into your ADS manager components</description>
+	<files>
+		<filename plugin="jlcommentsproads">jlcommentsproads.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="tp1" type="spacer" class="text" label="Настройки для плагина настраиваются"/>	
+				<field name="tp2" type="spacer" class="text" label=" из основного плагина JlComments Pro"/>	
+			</fieldset>
+		</fields>
+	</config>
+</extension>

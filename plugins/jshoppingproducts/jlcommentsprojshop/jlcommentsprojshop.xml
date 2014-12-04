@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" method="upgrade" group="jshoppingproducts">
+	<name>JoomLine comments Pro v2.7 for JoomShopping</name>
+	<author>JoomLine</author>
+	<creationDate>June, 2013</creationDate>
+	<copyright>(C) 2012-2013 by Zhukov  Artem (http://www.joomline.ru)</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>artem@joomline.ru</authorEmail>
+	<authorUrl>http://joomline.ru</authorUrl>
+	<version>2.7</version>
+	<description>Plugin allow integrate VK comments and Facebook comments into your JoomShopping components</description>
+	<files>
+		<filename plugin="jlcommentsprojshop">jlcommentsprojshop.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="tp1" type="spacer" class="text" label="Настройки для плагина настраиваются"/>	
+				<field name="tp2" type="spacer" class="text" label=" из основного плагина JlComments Pro v.2.2.2"/>	
+			</fieldset>
+		</fields>
+	</config>
+</extension>

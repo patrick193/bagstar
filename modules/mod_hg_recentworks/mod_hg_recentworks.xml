@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Recent Works Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module will present your latest works in several styles.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_recentworks">mod_hg_recentworks.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_recentworks.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<!-- to do
+				- feed from category/articles
+				-->
+				
+				<field name="modstyle" type="list" label="Module style" default="1">
+					<option value="1">Style 1</option>
+					<option value="2">Style 2</option>
+				</field>
+				
+				<field name="show_desc" type="list" label="Show Description Column?" default="1" description="Show the description on the left side?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="mod_title" type="text" label="Module Title" default="" class="input-xlarge" />
+				<field name="mod_desc" type="textarea" rows="5" class="input-xlarge" label="Module Description" default="" description="The description that appears on the left side." />
+				<field name="portfolio_link" type="text" label="Link to portfolio" placeholder="http://" description="The link to the portfolio that appears between arrows." class="input-xlarge" />
+				
+				<field type="spacer" label="Carousel Settings" class="title" />
+				<field name="items_min" type="text" label="Minimum visible items" default="2" description="Minimum visible items" class="input-mini" />
+				<field name="items_max" type="text" label="Maximum visible items" default="10" description="Maximum visible items" class="input-mini" />
+				<field name="autoplay" type="radio" label="Autoplay carousel" default="0" description="Autoplay carousel">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="items_scroll" type="text" label="How many to scroll?" default="1" description="How many items should be scrolled?" class="input-mini" />
+				<field name="items_width" type="text" label="Items Width" default="300" description="The width of the items (it won't be fixed however it will around this number)" class="input-mini" />
+				<field name="controls" type="radio" label="Display controls?" default="1" description="Display controls (left arrow, right arrow and link to full portfolio)?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			 
+			<fieldset name="boxes" label="Boxes Manager" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			
+				<field name="items" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Portfolio Item Manager" itemnname="Item"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="media" name="img" value="" label="Browse for image" description="Add an image here." />
+					<option type="text" name="title" value="" class="input-xlarge" label="Title" />
+					<option type="text" name="desc" value="" class="input-xlarge" label="Category/Description" />
+					<option type="texturl" name="linkurl" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Newsletter Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description>
+	<![CDATA[
+		<div style="line-height:1.6; color:#444; font-weight:normal;">
+		This module will add a newsletter subscription form. Its actually an integration of MailChimp. You can easily set-up a free account <a href="http://mailchimp.com/" target="_blank">http://mailchimp.com/</a>.<br/>
+		<h4>To get this module started you need to follow these steps:</h4>
+		
+		<p>1) Get your <strong>API Key</strong>: <a href="http://kb.mailchimp.com/article/where-can-i-find-my-api-key" target="_blank">http://kb.mailchimp.com/article/where-can-i-find-my-api-key</a></p>
+		<p>2) Get a <strong>List ID</strong>: <a href="http://kb.mailchimp.com/article/how-can-i-find-my-list-id" target="_blank">http://kb.mailchimp.com/article/how-can-i-find-my-list-id</a></p>
+		<p>3) Find out what's your assigned <strong>DATACENTER</strong>. To find your datacenter id just have a look in the address bar when you're logged in and you'll see it in from of the url. For example mine is <strong>us5</strong>.</p>
+		<p>4) Also there's one more thing, this form has a name field, so you'll have to create a new field in your dashboard in mailchimp website while logged-in. Take a look here what to do: <a href="http://mailchimp.com/resources/guides/html/how-to-use-merge-tags/" target="_blank">http://mailchimp.com/resources/guides/html/how-to-use-merge-tags/</a> . The fields name must be <strong>YNAME</strong>, please have a look here: <a href="http://www.diigo.com/item/image/1r4eu/pyja" target="_blank">http://www.diigo.com/item/image/1r4eu/pyja</a></p>
+
+<p>Also make sure your hosting has <strong>cURL enabled</strong>. It's mandatory for the script to work. If you don't know if you have it, just drop an email to your hosting support and tell them to activate it on your account.</p>
+		</div>
+	]]>
+	</description>
+
+	<files>
+		<filename module="mod_hg_newsletter">mod_hg_newsletter.php</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_newsletter.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<field name="pretext" type="textarea" rows="4" cols="60" label="Pre-Text" default="" description="" filter="raw" />
+				
+				<field name="footertext" type="textarea" rows="3" cols="60" label="Footer-Text" default="We never spam!" description="" filter="raw" />
+				<field name="notetext" type="textarea" rows="3" cols="60" label="Note Text" default="" description="The text that appears right after the form, which will be replaced with the result status when submitting the form." filter="raw" />
+				
+				<field type="spacer" label="Please read the description on the left side and follow the steps." class="title" />
+				<field name="apikey" type="text" label="API Key" default="" class="input-xlarge" />
+				<field name="listid" type="text" label="LIST ID" default="" class="input-xlarge" />
+				<field name="datacenter" type="text" label="DataCenter" description="For example us5 ."  />
+				
+				<field name="enablename" type="list" label="Enable Name Field?" default="1" description="Display the name field?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="safename" type="text" label="Safe Name Value" default="Kallyas User" description="If you disable the name field, you will need to add here a default value." />
+				
+				<field type="spacer" label="Labels" class="title" />
+				<field name="joinus" type="text" label="JOIN US - Label" description="Label for Join us button" default="JOIN US"  />
+				<field name="namepl" type="text" label="Name placeholder" description="Placeholder for the name field." default="your name"  />
+				<field name="emailpl" type="text" label="Email placeholder" description="Placeholder for the email field." default="email@address"  />
+
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

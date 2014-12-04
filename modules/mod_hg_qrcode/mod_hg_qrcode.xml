@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+	<name>QR Code Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>August 2011</creationDate>
+	<copyright>Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>mhogas@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description>This module adds a QR Code image.</description>
+	<files>
+		<filename module="mod_hg_qrcode">mod_hg_qrcode.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_hg_qrcode.xml</filename>
+		<folder>admin</folder>
+	</files>
+
+	<help key="QRCode Top" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="title" default="" type="text" size="40" label="Mod Title" description="Leave blank if you don't want any title." />
+				<field name="type" type="list" default="text" label="Choose Type!">
+					<option value="text">Text</option>
+					<option value="mecard">meCard</option>
+					<option value="url">URL</option>
+					<option value="call">Call</option>
+					<option value="sms">SMS</option>
+				</field>
+				<field name="width" type="text" default="180" label="Width" description="Width is equal with height, so that's why there isn't any height field" />
+				<field name="align" type="list" default="none" label="Image Align">
+					<option value="none">None</option>
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="margin" type="text" default="0px 0px 0px 0px" label="Margins" description="Add margins (TOP RIGHT BOTTOM LEFT)" />
+				
+				<field type="spacer" label="meCard" class="title" />
+				<field name="mecard_name" default="" type="text" size="40" label="Name" description="Full name" />
+				<field name="mecard_address" default="" type="text" size="40" label="Address" description="Full address" />
+				<field name="mecard_tel1" default="" type="text" size="40" label="Telephone 1" description="Telephone nr 1" />
+				<field name="mecard_tel2" default="" type="text" size="40" label="Telephone 2" description="Telephone nr 2" />
+				<field name="mecard_tel3" default="" type="text" size="40" label="Telephone 3" description="Telephone nr 3" />
+				<field name="mecard_tel4" default="" type="text" size="40" label="Telephone 4" description="Telephone nr 4" />
+				<field name="mecard_email" default="" type="text" size="40" label="Email Address" description="Email address" />
+				<field name="mecard_url" default="" type="text" size="40" label="URL" description="URL" />
+				
+				<field type="spacer" label="Text" class="title" />
+				<field name="text" default="" type="textarea" cols="50" rows="5" label="Text" description="Enter your text here." />
+	
+				<field type="spacer" label="URL" class="title" />
+				<field name="url" default="http://" type="text" size="50" label="URL" description="Enter your url here." />
+				
+				<field type="spacer" label="Call" class="title" />
+				<field name="call_country_code" default="" type="text" size="40" label="Country code:" description="Country code" />
+				<field name="call_area_code" default="" type="text" size="40" label="Country code:" description="Country code" />
+				<field name="call_telephone" default="" type="text" size="40" label="Telephone number:" description="Telephone number" />
+				
+				<field type="spacer" label="SMS text" class="title" />
+				<field name="sms_country_code" default="" type="text" size="40" label="Country code:" description="Country code" />
+				<field name="sms_area_code" default="" type="text" size="40" label="Country code:" description="Country code" />
+				<field name="sms_telephone" default="" type="text" size="40" label="Telephone number:" description="Telephone number" />
+				<field name="sms_text" default="" type="textarea" cols="50" rows="5" label="SMS text (160ch)" description="SMS text, maximum 160 characters. Use http://www.lettercount.com/ to count the letters." />
+
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

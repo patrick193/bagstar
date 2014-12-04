@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content" method="upgrade">
+	<name>JoomLine comments PRO v 2.7</name>
+	<author>JoomLine</author>
+	<creationDate>June, 2012</creationDate>
+	<copyright>(C) 2011-2013 by Kunitsyn Vadim and Zhukov Artem(http://www.joomline.ru)</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>vadim@joomline.ru</authorEmail>
+	<authorUrl>http://joomline.ru</authorUrl>
+	<version>2.7</version>
+	<description>Plugin allow integrate JComments, VK comments and Facebook comments into your joomla based site. Comments can be displayed in the components: K2, ZOO, Content, VirtueMart, ADSManager, JoomShopping.</description>
+	<files>
+		<filename plugin="jlcommentspro">jlcommentspro.php</filename>
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>elements</folder>
+	</files>
+	<media folder="media/jlcommentsprozooel" destination="zoo/elements/jlcommentsprozooel">
+         <folder>assets</folder>
+         <filename>index.html</filename>
+         <filename>jlcommentsprozooel.php</filename>
+         <filename>jlcommentsprozooel.xml</filename>
+    </media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_jlcommentspro.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_jlcommentspro.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/plugins/content/jlcommentspro/elements/">
+				<field name="tp1" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_VK"/>	
+				<field name="showvkontakte" type="radio" default="0" label="PLG_JLCOMMENTSPRO_SHOWVKONTAKTE_LABEL" description="PLG_JLCOMMENTSPRO_SHOWVKONTAKTE_DESC">
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="labelvk" type="text" label="PLG_JLCOMMENTSPRO_VK_LABEL" default="Vk"/>
+				<field name="apiId" type="text" label="api ID Vkontakte" default="api ID"/>				
+				<field name="attach" type="list" default="*" label="PLG_JLCOMMENTSPRO_ATTACH_LABEL" description="PLG_JLCOMMENTSPRO_ATTACH_DESC">
+				  <option value="*">PLG_JLCOMMENTSPRO_VSE</option>
+				  <option value="false">PLG_JLCOMMENTSPRO_FALSE</option>
+				  <option value="graffiti">PLG_JLCOMMENTSPRO_GRAFFITI</option>
+				  <option value="photo">PLG_JLCOMMENTSPRO_PHOTO</option>
+				  <option value="audio">PLG_JLCOMMENTSPRO_AUDIO</option>
+				  <option value="video">PLG_JLCOMMENTSPRO_VIDEO</option>
+				  <option value="link">PLG_JLCOMMENTSPRO_LINK</option>
+				</field>
+				<field name="autoPublish" type="radio" default="1" label="PLG_JLCOMMENTSPRO_AUTOPUBLISH_LABEL" description="PLG_JLCOMMENTSPRO_AUTOPUBLISH_DESC">
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="norealtime" type="radio" default="0" label="PLG_JLCOMMENTSPRO_NOREALTIME_LABEL" description="PLG_JLCOMMENTSPRO_NOREALTIME_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="tp2" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_FB"/>	
+				<field name="showfacebook" type="radio" default="0" label="PLG_JLCOMMENTSPRO_SHOWVKONTAKTE_LABEL" >
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="labelfc" type="text" label="PLG_JLCOMMENTSPRO_FC_LABEL" default="Facebook"/>
+				<field name="fbId" type="text" label="Id Facebook" default=""/>
+				<field name="fbadmin" type="text" label="PLG_JLCOMMENTSPRO_FBADMIN_LABEL" description="PLG_JLCOMMENTSPRO_FBADMIN_DESC" default=""/>
+				<field name="fb_lang" type="list" default="ru_RU" label="PLG_JLCOMMENTSPRO_FBLANG_LABEL" description="PLG_JLCOMMENTSPRO_FBLANG_DESC">
+				  <option value="ru_RU">Русский</option>
+				  <option value="en_US">English</option>
+				</field>
+				<field name="tp3" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_OBSH"/>
+				<field name="showjcomments" type="radio" default="0" label="PLG_JLCOMMENTSPRO_SHOWJCOMMENTS_LABEL">
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="labeljc" type="text" label="PLG_JLCOMMENTSPRO_JC_LABEL" default="Comments"/>				
+				<field name="showcounter" type="radio" default="0" label="PLG_JLCOMMENTSPRO_SHOWJCOMMENTS_COUNTER_LABEL">
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="comLimit" type="text" label="PLG_JLCOMMENTSPRO_COMLIMIT_LABEL" default="10"/>
+				<field name="orders" type="text" label="PLG_JLCOMMENTSPRO_ORDERS_LABEL" default="1,2,3" description="PLG_JLCOMMENTSPRO_ORDERS_DESC"/>
+				<field name="width" type="text" label="PLG_JLCOMMENTSPRO_WIDTH_LABEL" default="500" description="PLG_JLCOMMENTSPRO_WIDTH_DESC"/>
+				<field name="tp4" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_CONTENT"/>
+				<field name="autoAdd" type="list" default="0" label="PLG_JLCOMMENTSPRO_SHOW_LABEL" description="PLG_JLCOMMENTSPRO_AUTOADD_DESC">
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+				<field name="categories" type="category" extension='com_content' default="0" multiple="multiple" label="PLG_JLCOMMENTSPRO_EXCLUDE_CATEGORY_LABEL" description="PLG_JLCOMMENTSPRO_EXCLUDE_CATEGORY_DESC"/>
+				<field name="tp5" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_VIRTUEMART"/>
+				<field name="virtcontent" type="list" default="0" label="PLG_JLCOMMENTSPRO_SHOW_LABEL">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="autoAddvm" type="list" default="0" label="PLG_JLCOMMENTSPRO_AUTOADD_LABEL" description="PLG_JLCOMMENTSPRO_AUTOADD_DESC_VIRTUEMART">
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				</field>
+                <field name="metkavmon" type="list" default="0" label="PLG_JLCOMMENTSPRO_METKAVMON_LABEL" description="PLG_JLCOMMENTSPRO_METKAVMON_DESC">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+                <field name="metkavm" type="text" label="PLG_JLCOMMENTSPRO_METKAVM_LABEL" default="span.step" description="PLG_JLCOMMENTSPRO_METKAVM_DESC"/>
+				<field name="ogtagvm" type="radio" default="0" label="PLG_JLCOMMENTSPRO_OGTAG_LABEL" description="PLG_JLCOMMENTSPRO_OGTAG_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="tp6" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_ADSMANAGER"/>
+				<field name="adscontent" type="list" default="0" label="PLG_JLCOMMENTSPRO_SHOW_LABEL">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="7" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_JSHOPMANAGER"/>
+				<field name="jshopcontent" type="list" default="0" label="PLG_JLCOMMENTSPRO_SHOW_LABEL">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="jshopposition" type="list" default="2" label="PLG_JOOMSHOPPING_SOCIAL_SHARE_POSITION" description="PLG_JOOMSHOPPING_SOCIAL_SHARE_POSITION_DESC">
+                   <option value="1">PLG_JOOMSHOPPING_SOCIAL_SHARE_TOP</option>
+                   <option value="2">PLG_JOOMSHOPPING_SOCIAL_SHARE_MIDDLE</option>
+                   <option value="3">PLG_JOOMSHOPPING_SOCIAL_SHARE_BOTTOM</option>
+                </field>
+				<field name="ogtagjshop" type="radio" default="0" label="PLG_JLCOMMENTSPRO_OGTAG_LABEL" description="PLG_JLCOMMENTSPRO_OGTAG_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<!--<field name="metkaadson" type="list" default="0" label="Включить ручной вывод" description="Включить ручной вывод">
+					<option value="1">Да</option>
+					<option value="0">Нет</option>
+				</field>
+                <field name="metkaads" type="text" label="Укажите место вывода плагина" default="span.step" description="Укажите блок например: div или p... а так же класс блока: div.test или p.test, где .test - класс блока"/>-->
+				<field name="tp8" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS_K2"/>								
+				<field name="k2categories" type="categoriesmultiple" default="" label="PLG_JLCOMMENTSPRO_CATEGORY_K2_LABEL"/>
+				<field name="k2After" type="list" default="0" label="PLG_JLCOMMENTSPRO_SHOW_LABEL" description="PLG_JLCOMMENTSPRO_SHOW_DESC">
+				  <option value="2">PLG_JLCOMMENTSPRO_SHOW_TEXT</option>
+				  <option value="1">PLG_JLCOMMENTSPRO_SHOW_FOOTER</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="metkak2on" type="list" default="0" label="PLG_JLCOMMENTSPRO_METKAVMON_LABEL" description="PLG_JLCOMMENTSPRO_METKAVMON_DESC">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+                <field name="metkak2" type="text" label="PLG_JLCOMMENTSPRO_METKAVM_LABEL" default="span.step" description="PLG_JLCOMMENTSPRO_METKAVM_DESC"/>
+				<field name="ogtagk2" type="radio" default="0" label="PLG_JLCOMMENTSPRO_OGTAG_LABEL" description="PLG_JLCOMMENTSPRO_OGTAG_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="k2showself" type="list" default="0" label="PLG_JLCOMMENTSPRO_K2_SELF_LABEL" description="PLG_JLCOMMENTSPRO_K2_SELF_DESC">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="replacejcommentsk2" type="list" default="0" label="PLG_JLCOMMENTSPRO_K2_REPLACE_JCOM_LABEL" description="PLG_JLCOMMENTSPRO_K2_REPLACE_JCOM_DESC">
+					<option value="1">PLG_JLCOMMENTSPRO_YES</option>
+					<option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+				<field name="labelk2" type="text" label="PLG_JLCOMMENTSPRO_K2_LABEL" default="K2 Comments"/>	
+				<!--<field name="tp9" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_ZOO_SETTINGS"/>	
+				<field name="zoocomposition" type="list" default="2" label="PLG_JLCOMMENTSPRO_SHOW_ZOO_LABEL" description="PLG_JLCOMMENTSPRO_SHOW_ZOO_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_ZOO_BEFORE_TEXT</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_ZOO_AFTER_TEXT</option>
+				  <option value="2">PLG_JLCOMMENTSPRO_ZOO_TEXT_NO</option>
+				</field>
+				<field name="ogtagzoo" type="radio" default="0" label="PLG_JLCOMMENTSPRO_OGTAG_LABEL" description="PLG_JLCOMMENTSPRO_OGTAG_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>-->
+				<field name="tp9" type="spacer" class="text" label="PLG_JLCOMMENTSPRO_SETTINGS"/>	
+				<field name="typeviewer" type="list" default="0" label="PLG_JLCOMMENTSPRO_TYPEVIEWER_LABEL" description="PLG_JLCOMMENTSPRO_TYPEVIEWER_DESC">
+				  <option value="0">jquery</option>
+				  <option value="1">mootools</option>
+				</field>
+				<field name="jqload" type="radio" default="1" label="PLG_JLCOMMENTSPRO_JQLOAD_LABEL" description="PLG_JLCOMMENTSPRO_JQLOAD_DESC">
+				  <option value="1">PLG_JLCOMMENTSPRO_YES</option>
+				  <option value="0">PLG_JLCOMMENTSPRO_NO</option>
+				</field>
+                <field name="unic" type="radio" default="0" label="PLG_JLCOMMENTSPRO_UNIC_LABEL" description="PLG_JLCOMMENTSPRO_UNIC_DESC">
+				  <option value="1">New</option>
+				  <option value="0">Old</option>
+				</field>											
+			</fieldset>			
+		</fields>
+	</config>
+</extension>

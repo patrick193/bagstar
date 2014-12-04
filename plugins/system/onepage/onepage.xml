@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+        <name>plg_system_onepage</name>
+        <author>Linelab.org</author>
+        <creationDate>15.4.2013</creationDate>
+        <copyright>Copyright (C) 2012 Linelab.org. All rights reserved.</copyright>
+        <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+        <authorEmail>linelab@linelab.org</authorEmail>
+        <authorUrl>www.linelab.org</authorUrl>
+        <version>4.3</version>
+        <description>PLG_SYSTEM_ONEPAGE_XML_DESCRIPTION</description>
+        <files>
+        		<folder>images</folder>
+                <filename plugin="onepage">onepage.php</filename>
+                <filename plugin="onepage">onepage.css</filename>
+        </files>
+        <languages folder="languages">
+        	<language tag="en-GB">en-GB.plg_system_onepage.ini</language>
+        </languages>
+        <config>
+	        <fields name="params">
+	                <fieldset name="basic">
+	                	<field name="check_shipto_address" type="radio" default="0" label="PLG_SYSTEM_ONEPAGE_CHECK_SHIPTO_ADDRESS">
+	                		<option value="0">JNO</option>
+	                		<option value="1">JYES</option>
+	                	</field>
+	                	<field name="check_register" type="radio" default="0" label="PLG_SYSTEM_ONEPAGE_CHECK_REGISTER">
+	                		<option value="0">JNO</option>
+	                		<option value="1">JYES</option>
+	                	</field>
+	                	<field name="preloader" type="radio" default="0" label="PLG_SYSTEM_ONEPAGE_USE_PRELOADER">
+	                		<option value="0">JNO</option>
+	                		<option value="1">JYES</option>
+	                	</field>
+	                	<field name="address_position" type="radio" default="0" label="PLG_SYSTEM_ONEPAGE_ADDRESS_POSITION">
+								<option value="0">PLG_SYSTEM_ONEPAGE_ABOVE</option>
+								<option value="1">PLG_SYSTEM_ONEPAGE_BELOW</option>
+	                	</field>
+	                	<field type="sql" query="SELECT virtuemart_country_id AS id, country_name AS title FROM #__virtuemart_countries ORDER BY country_name" key_field="id" value_field="title" name="country_id" id="country_id" label="PLG_SYSTEM_ONEPAGE_DEFAULT_COUNTRY" />
+	                </fieldset>
+	        </fields>
+        </config>
+</extension>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.6">
+<name>JoomLine JLComments Pro pack</name>
+<packagename>jlcommentspro</packagename>
+<version>2.x.x</version>
+<url>http://joomline.ru</url>
+<packager>JoomLine.ru</packager>
+<packagerurl>http://joomline.ru</packagerurl>
+<description>Plugin allow integrate JComments, VK comments and Facebook comments into your joomla based site. Comments can be displayed in the components: K2, ZOO, Content, VirtueMart, ADSManager, JoomShopping.</description>
+<files>
+        <file type="plugin" client="site">jlcommentspro.zip</file>
+        <file type="plugin" client="site">jlcommentsproads.zip</file>
+        <file type="plugin" client="site">jlcommentsprojshop.zip</file>
+        <file type="plugin" client="site">jlcommentsprok2.zip</file>
+</files>
+</extension>

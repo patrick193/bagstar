@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Latest Posts Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module will display the latest posts specified by you in a certain category. You can also choose 4 different styles!!
+	]]></description>
+	
+	<files>
+		<filename module="mod_hg_latestposts">mod_hg_latestposts.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_hg_latestposts.xml</filename>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="catid" type="category" extension="com_content" multiple="true" size="10" default="" label="Category" description="Selects Articles from one or more Categories. If no selection will show all categories as default" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field name="count" type="text" default="3" label="Count" class="input-tiny" description="The number of Articles to display (the default is 3)" />
+				
+				<field name="link_label" type="text" default="VIEW ALL -" label="View all (link label)" description="The label of the 'VIEW ALL' link. Leave blank to hide the link." class="input-xlarge" />
+				<field name="link" type="menuitem" label="View all LINK" description="The view all link"/>
+
+				<field name="introtext_limit" type="text" default="100" class="input-tiny"	label="Full text limit" description="Limit how many characters to display in the full text." />
+				<field name="mod_title" type="text" default="" label="Module Title" description="The module's title" class="input-xlarge" />
+
+				<field name="modstyle" type="list" default="1" label="Module style" description="The stylingof the module">
+					<option value="1">Style 1</option>
+					<option value="2">Style 2</option>
+					<option value="3">Style 3</option>
+					<option value="4">Style 4 (Accordion)</option>
+				</field>
+				<field type="spacer" class="title" label="Style 1 settings"/>
+				<field name="perrow" type="text" class="input-tiny" label="How many boxes per row" default="4" description="How many feature boxes should be on each row. " />
+				
+				<field type="spacer" class="title" label="Other settings"/>
+				<field name="show_featured" type="list" default="" label="Featured Articles" description="Show/Hide Articles designated as Featured">
+					<option value="">JSHOW</option>
+					<option value="0">JHIDE</option>
+					<option value="1">Only show Featured Articles</option>
+				</field>
+				
+				<field name="ordering" type="list" default="published" label="Order" description="Recently Added First: order the articles using their creation date&lt;br /&gt;Recently Modified First: order the articles using their modification date&lt;br /&gt;Recently Published First: order the articles using their publication date.&lt;br /&gt;Recently Touched First: order the articles using their modification or creation dates.">
+					<option value="c_dsc">Recently Added First</option>
+					<option value="m_dsc">Recently Modified First</option>
+					<option value="p_dsc">Recently Published First</option>
+					<option value="mc_dsc">Recently Touched First</option>
+				</field>
+				
+				<field name="user_id" type="list" default="0" label="Authors" description="Filter by author">
+					<option value="0">Anyone</option>
+					<option value="by_me">Added or modified by me</option>
+					<option value="not_me">Not added or modified by me</option>
+				</field>
+				
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

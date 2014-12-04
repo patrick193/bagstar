@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Cute 3D Slider Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://codecanyon.net/item/cute-slider-3d-2d-html5-image-slider/3046001" target="_blank">Cute Slider - 3D & 2D HTML5 Image Slider</a> by <a href="http://codecanyon.net/user/averta" target="_blank">Averta</a> and converted as a Joomla Module by Marius Hogas. Cute Slider is a unique and easy to use slider with awesome 3D and 2D transition effects, captions, video (youtube and vimeo) support and more impressive features which written with pure object oriented javascript. It has easy to implement and search engine optimized html markup.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_cute3dslider">mod_hg_cute3dslider.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_cute3dslider.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="slidermanager" label="Slides Manager">
+								
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="media" name="img" value="" label="Browse for image" />
+					<option type="text" name="trans3d" value="" class="input-xlarge" label="3D Transitions" placeholder="ex: tr2,tr3,tr4..." description="You can add any transition between 1-60 like tr1,tr2,tr3 etc. separated by comma. All of these will be used randomly." />
+					<option type="text" name="trans2d" value="" class="input-xlarge" label="2D Transitions" placeholder="ex: tr2,tr3,tr4..." description="You can add any transition between 1-41 like tr1,tr2,tr3 etc. separated by comma. All of these will be used randomly. Keep in mind that this is the backup for the 3D transitions." />
+					<option type="texturl" name="url" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option type="text" name="title" value="" class="input-xlarge" label="Slide Caption" />
+					<option type="select" name="capt_pos" label="Caption Position" description="Caption position" value="1" class="input-medium">
+						[{"name":"Left Bottom", "value":"1"}, {"name":"Left Top", "value":"2"}, {"name":"Right Top", "value":"3"}, {"name":"Right Bottom", "value":"4"}]
+					</option>
+					<option type="select" name="capt_effect" label="Caption Effect" description="Caption entry effect" value="fade" class="input-medium">
+						[{"name":"Fade", "value":"fade"}, {"name":"Slide", "value":"slide"}]
+					</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+			
+				<!-- Basic settings -->
+				<field type="spacer" class="text-title" label="Slider Settings"/>
+				
+				<field name="width" type="text" label="Width" default="1170" description="Default width" />
+				<field name="height" type="text" label="Height" default="465" description="Default height" />
+				<field name="delay" type="text" label="Delay (seconds)" default="4" description="Timing between slides" />
+				<field name="circletimer" type="list" label="Enable CircleTimer?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="arrows" type="list" label="Enable Arrows?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slidecontrol" type="list" label="Enable Bullets?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="bartimer" type="list" label="Enable BarTimer?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="shadow" type="list" label="Enable Bottom Shadow?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="thumbs" type="list" label="Enable Thumbs?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pauseonhover" type="list" label="Pause On Hover?" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="randomize" type="list" label="Randomize?" default="0" description="Indicates whether slideshow will show slides in random order">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

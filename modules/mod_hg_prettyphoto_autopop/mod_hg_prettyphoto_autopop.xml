@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+	<name>AutoPop Lightbox Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>2012</creationDate>
+	<copyright>Copyright Hogas Marius. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>mhogas@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description>This module adds an pop-up lightbox window when the page is accessed/refreshed.</description>
+	<files>
+		<filename module="mod_hg_prettyphoto_autopop">mod_hg_prettyphoto_autopop.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_hg_prettyphoto_autopop.xml</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset addfieldpath="/plugins/system/hg_assets/assets/admin/formfield" name="basic">
+				<field type="asset" name="asset" path="plugins/system/hg_assets/assets/admin/" />
+				
+				<field name="popup_type" type="list" default="0" label="Source type" description="Choose what kind of pop-up is this.">
+					<option value="0">Image</option>
+					<option value="1">Iframe</option>
+					<option value="2">Youtube</option>
+					<option value="3">Vimeo</option>
+					<option value="4">Quicktime</option>
+					<option value="5">Inline Content</option>
+					<option value="6">Flash content</option>
+				</field>
+				
+				<field name="popup_url" type="text" default="" label="SOURCE" description="Add here the url of what you want to open. Don't forget http://" size="40" /> 
+				<field name="popup_title" type="text" default="" label="Popup Title" description="Add here the title you want to display above." size="40" />
+				<field name="popup_description" type="textarea" default="" label="Popup Description" description="Add here the description you want to display in the popup." rows="5" cols="40" />
+				<field name="popup_width" type="text" default="600" label="Popup Width (px)" description="eg: 400 (without px, add unit when using % percent)" size="10" />
+				<field name="popup_height" type="text" default="450" label="Popup Height (px)" description="eg: 400 (without px, add unit when using % percent)" size="10" />
+				<field name="popup_autohide" type="radio" default="1" label="Autohide Popup?" description="Do you want to autoclose the popup?">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="popup_timeout" type="text" default="8000" label="Autohide delay (ms)" description="Time of self closing. 8000 means 8 seconds" size="10" />
+				<field type="titlespacer" label="Inline content" />
+				<field name="inline_content_id" type="text" default="#inline_content" label="Unique ID" description="Add a unique ID that will associate the link with the actual hidden content." size="30" />
+				<field name="inline_content_value" type="editor" default="" label="Content" description="Content of what you want to add inside this container" filter="raw" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>iCarousel Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://codecanyon.net/item/icarousel/2527180" target="_blank">iCarousel</a> by <a href="http://codecanyon.net/user/hemn" target="_blank">Hemn</a> and converted as a Joomla Module by Marius Hogas. iCarousel is a powerful mobile-friendly and lightweight jQuery plugin that allows you to arrange a set of images in a carousel layout. 
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_icarousel">mod_hg_icarousel.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_icarousel.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="slidermanager" label="Slides Manager">
+								
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option name="vals" type="hidden" value="" />
+					<option name="img" type="media" value="" label="Browse for image" />
+					<option name="title" type="text" value="" class="input-xlarge" label="Slide Caption" />
+					<option name="url" type="texturl" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option name="pausetime" type="text" value="1000" class="input-small" label="Slide Duration" description="Miliseconds, individual time interval." />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+				<!-- Basic settings -->
+				<field name="container_height" type="text" label="Container minimum height" default="440" description="Container minimum height" />
+				
+				<field type="spacer" class="text-title" label="Slider Settings"/>
+				<field name="easing" type="list" label="Easing" default="easeInOutQuint" description="Easing timing">
+					<option value="linear">linear</option>
+					<option value="ease">ease</option>
+					<option value="ease-in">ease-in</option>
+					<option value="ease-out">ease-out</option>
+					<option value="ease-in-out">ease-in-out</option>
+					<option value="ease-out-in">ease-out-in</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine"></option>
+					<option value="easeInOutSine">easeOutSine</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+				</field>
+				<field name="slidesnr" type="text" label="Slides displayed" default="7" description="How many slides will be shown (Must be an odd number)" />
+				<field name="make3D" type="list" label="Make 3D" default="1" description="To Enable or Disable 3D effect.">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="perspective" type="text" label="Perspective" default="75" description="The 3D perspective option. (Min 0 &amp; Max 100);" />
+				<field name="animationSpeed" type="text" label="Animation Speed" default="700" description="Slide transition speed (Microsecond)" />
+				<field name="pauseTime" type="text" label="Pause Time" default="5000" description="How long each slide will show (Microsecond)" />
+				<field name="pauseOnHover" type="list" label="Pause On Hover" default="1" description="To Enable or Disable the carousel when mouse come over it">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="timer" type="list" label="Timer style" default="Bar">
+					<option value="Pie">Pie</option>
+					<option value="Bar">Bar</option>
+					<option value="360Bar">360Bar</option>
+				</field>
+				<field name="keyboardNav" type="list" label="Keyboard Navigation?" default="1" description=" To Enable or Disable the keyboard navigation">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="mouseWheel" type="list" label="MouseWheel?" default="1" description="To Enable or Disable the mousewheel navigation">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="directionNav" type="list" label="Enable Controls?" default="1" description="Next &amp; Previous navigation">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="touchNav" type="list" label="Touch navigation?" default="1" description="To Enable or Disable the touch navigation">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="autoPlay" type="list" label="Autoplay?" default="1" description="To Enable or Disable the autoplay">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="randomStart" type="list" label="Random start?" default="0" description="Start on a random slide">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="startSlide" type="text" label="Start slide" default="0" description=" Set starting Slide (0 index)" />
+				<field name="slidesSpace" type="text" label="Slides Space" default="300" description="Spaces between slides" />
+        		<field name="timerPosition" type="list" label="Timer position" default="bottom-center">
+					<option value="bottom-center">bottom-center</option>
+					<option value="top-center">top-center</option>
+					<option value="middle-center">middle-center</option>
+					<option value="bottom-left">bottom-left</option>
+					<option value="top-left">top-left</option>
+					<option value="middle-left">middle-left</option>
+					<option value="bottom-right">bottom-right</option>
+					<option value="top-right">top-right</option>
+					<option value="middle-right">middle-right</option>
+				</field>
+				<field name="resize_images" type="list" label="Resize images?" default="0" description="This option will enable resizing the images if they are too big.">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

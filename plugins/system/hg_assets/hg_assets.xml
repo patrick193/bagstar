@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @version		$Id$
+ * @author		Hogas Marius (mhogas@gmail.com)
+ * @package		Joomla.Site
+ * @subpakage	Hogash.HGAssets
+ * @copyright	Copyright (c) 2012 Hogash Templates (http://www.hogash.com). All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+-->
+<extension type="plugin" version="2.5" group="system" method="upgrade">
+	<name>HG Templates Assets</name>
+	<author>Marius Hogas</author>
+	<creationDate>May 2012</creationDate>
+	<copyright>Copyright (c) 2012 Skyline. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>mhogas@gmail.com</authorEmail>
+	<authorUrl>http://www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description>
+	<![CDATA[
+		Library of assets and helpers for Hogash Templates. (<a target="_blank" href="http://www.hogash.com">http://www.hogash.com</a>).  <h3 style="color:red;">DON'T FORGET TO ENABLE ME IN PLUGIN MANAGER!!<br />Otherwise the template won't work!!</h3>
+	]]>
+	</description>
+
+	<files>
+		<filename plugin="hg_assets">hg_assets.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset addfieldpath="/plugins/system/hg_assets/assets/formfield" name="advanced">
+				<field type="asset" name="asset" path="plugins/system/hg_assets/assets/" />
+								
+				<field name="hidemenu" type="list" class="switcher" default="1" label="Unblock admin menubar?" description="When you're editing an article or module etc. the main menu is blocked from clicking. This option can unblock it.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="shortcodes" type="list" class="switcher" default="1" label="Enable Shortcodes?" description="Enable the shortcodes? Make sure the Zauan Library is installed and enabled too!">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

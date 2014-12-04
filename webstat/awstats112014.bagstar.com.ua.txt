@@ -1,0 +1,315 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201411 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.bagstar.com.ua.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1994                
+POS_TIME 2659                
+POS_VISITOR 7512                
+POS_DAY 7961                
+POS_DOMAIN 3387                
+POS_LOGIN 3619                
+POS_ROBOT 3774                
+POS_WORMS 4133                
+POS_EMAILSENDER 4264                
+POS_EMAILRECEIVER 4407                
+POS_SESSION 8187                
+POS_SIDER 8360                
+POS_FILETYPES 4542                
+POS_DOWNLOADS 4799                
+POS_OS 4870                
+POS_BROWSER 4957                
+POS_SCREENSIZE 5166                
+POS_UNKNOWNREFERER 5240                
+POS_UNKNOWNREFERERBROWSER 5327                
+POS_ORIGIN 5409                
+POS_SEREFERRALS 5546                
+POS_PAGEREFS 5701                
+POS_SEARCHWORDS 5849                
+POS_KEYWORDS 6018                
+POS_MISC 2323                
+POS_ERRORS 6094                
+POS_CLUSTER 3475                
+POS_SIDER_404 6237                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20141201000153 76 18290 7807173249634
+FirstTime 0
+LastTime 20141130222738
+LastUpdate 20141201055956 76 0 75 0 0
+TotalVisits 13                  
+TotalUnique 9                   
+MonthHostsKnown 0                   
+MonthHostsUnknown 9                   
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 2 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 8 155 4540863 31 40 124051
+1 0 0 0 33 34 113500
+2 0 0 0 43 45 147865
+3 1 1 293 47 51 105728
+4 0 0 0 190 191 627453
+5 0 0 0 38 46 164022
+6 0 0 0 36 41 87643
+7 0 0 0 35 39 129950
+8 1 10 119737 35 37 137239
+9 0 0 0 41 42 112027
+10 0 0 0 38 47 120040
+11 0 0 0 36 41 99683
+12 11 204 6610397 46 53 134130
+13 6 69 2336675 55 70 382538
+14 0 0 0 36 39 144543
+15 0 1 829 36 38 135861
+16 0 0 0 38 39 104777
+17 28 386 8830589 64 103 169623
+18 32 180 1930245 36 60 182800
+19 2 35 165640 38 46 162020
+20 15 210 6644402 69 114 913191
+21 3 46 2321646 37 66 372520
+22 9 35 1107741 47 64 318475
+23 0 0 0 40 46 135869
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 116 1332 34609057
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 6
+yandex 200 2341858 20141130224326 0
+mail\.ru 10 33589 20141130183835 8
+bot[\s_+:,\.\;\/\\-] 10 11290 20141103202955 10
+googlebot 7 16012 20141128025650 5
+no_user_agent 1 42403 20141128181313 0
+surveybot 1 1129 20141123194134 1
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+htc 2 82580 0 0
+css 138 1450166 0 0
+png 518 2216495 0 0
+ico 54 3594164 0 0
+php 33 2195852 0 0
+html 42 329255 0 0
+js 319 7531101 0 0
+jpg 152 16564944 0 0
+Unknown 39 556085 0 0
+gif 35 88415 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/robots.txt 24 0 24886
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 4
+linuxandroid 26
+winxp 45
+linux 361
+winvista 900
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 8
+firefox32.0 175
+msie8.0 45
+firefox33.0 361
+chrome39.0.2171.65 319
+chrome18.0.1025.166 26
+chrome38.0.2125.122 98
+chrome38.0.2125.111 148
+chrome39.0.2171.71 160
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 12 23
+From1 0 0
+From2 1 1
+From3 0 0
+From4 103 1308
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+yandex 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+bagstar.com.ua 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+bagstar.com.ua 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 769 1919435
+503 209 686562
+303 3 1107
+500 32 8320
+404 143 59981
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 20
+/image/cache/data/IMG_9190-2000x1333.jpg 1 -
+/image/cache/data/IMG_9228-2000x1333.jpg 1 -
+/download/abookQUc.php 9 -
+/image/cache/data/IMG_9230-2000x1333.jpg 1 -
+/image/cache/data/IMG_9192-2000x1333.jpg 1 -
+/image/cache/data/IMG_9232-2000x1333.jpg 1 -
+/components/com_virtuemart/assets/images/vmgeneral/filetype_ity.png 24 http://bagstar.com.ua/index.php/ryukzaki/shkolnye
+/image/cache/data/IMG_9144-2000x1333.jpg 1 -
+/download/ofi/ 4 -
+/download/info.php.713d89468ce7f551d052127d14009cee 1 -
+/download/info.php.bedde786c11a4b2430c166e0a7937dd3 1 -
+//indexDA8.php 9 -
+/image/cache/data/IMG_9234-2000x1333.jpg 1 -
+//logoffiE2.php 9 -
+//abook13ET.php 9 -
+/components/com_virtuemart/assets/images/vmgeneral/filetype_our.png 25 http://bagstar.com.ua/index.php/ryukzaki/shkolnye
+/download/ticketxIK.php 9 -
+//xmlrpcyRn.php 9 -
+/download/hne/ 3 -
+/components/com_virtuemart/assets/images/vmgeneral/filetype_234567.png 24 http://bagstar.com.ua/index.php/ryukzaki/shkolnye
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 9
+159.224.95.92 64 642 12033005 20141127190410
+91.221.154.58 25 394 13575662 20141127210102
+2.93.117.46 9 35 1107741 20141130222738
+178.165.44.55 8 156 4541692 20141128001249
+212.111.199.172 6 69 2336675 20141126131007
+95.25.118.69 1 5 322891 20141126182834
+95.28.64.142 1 5 322891 20141124201400
+212.111.199.46 1 10 119737 20141126085054
+77.52.153.41 1 16 248763 20141127174135
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 7
+20141102 4 62 1678185 1
+20141123 5 86 2279638 1
+20141124 1 5 322891 1
+20141126 8 84 2779303 3
+20141127 81 905 21900436 5
+20141128 8 155 4540863 1
+20141130 9 35 1107741 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 4
+1h+ 1
+5mn-15mn 4
+0s-30s 5
+30s-2mn 3
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 20
+/ 26 318515 7 4
+/templates/kallyas/css/template.css.php 24 2187592 6 4
+/index.php/sumki/homepage-3 10 156090 0 0
+/plugins/system/jcemediabox/themes/standard/tooltip.html 8 4366 0 2
+/plugins/system/jcemediabox/themes/standard/popup.html 8 6374 0 0
+/index.php 6 2984 0 0
+/index.php/ryukzaki/shkolnye 5 81781 0 0
+/index.php/sumki/muzhskie-sumki 4 50433 0 1
+/index.php/sumki 4 47649 0 0
+/index.php/sumki/homepage-3/sumka-molodezhnaya-detail 4 58628 0 1
+/index.php/2013-02-21-16-49-18 1 11661 0 0
+/index.php/index.php 1 516 0 0
+/templates/kallyas/js/PIE.htc 2 82580 0 0
+/index.php/sumki/zhenskie-sumki 2 31306 0 0
+/index.php/cart 3 51794 0 1
+/index.php/dostavka 3 34485 0 0
+/index.php/2013-02-21-16-49-21 1 11527 0 0
+/index.php/ryukzaki/shkolnye/ryukzak-shkolnyj-detail 1 16048 0 0
+/templates/kallyas/css/pie.css.php 2 4760 0 0
+/index.php/sumki/homepage-3/sumka-molodezhnaya-detail/askquestion 1 4683 0 0
+END_SIDER

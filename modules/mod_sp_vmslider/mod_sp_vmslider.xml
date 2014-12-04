@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SP VirtueMart Product Slider</name>
+	<author>JoomShaper</author>
+	<creationDate>April 2013</creationDate>
+	<copyright>(C) 2013 JoomShaper. All rights reserved.</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>support@joomshaper.com</authorEmail>
+	<authorUrl>http://www.joomshaper.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Displays Product Slider.</description>
+	<files>
+		<filename module="mod_sp_vmslider">mod_sp_vmslider.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<folder>language</folder>
+		<folder>assets</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_sp_vmslider.ini</language>
+	</languages>
+	<config>
+		<fields name="params"  addfieldpath="/administrator/components/com_virtuemart/elements">
+			<fieldset name="basic">  	
+
+				<field name="category_id"  type="vmcategories"  value_field="category_name" 
+					label="SP_VMSLIDE_CATEGORIES" 
+					description="SP_VMSLIDE_CATEGORIES_DESC" />      
+
+					<field name="product_group" type="list" default="featured"
+						label="SP_VMSLIDE_PRODUCT_GROUP"
+						description="SP_VMSLIDE_PRODUCT_GROUP_DESC">
+						<option value="featured">COM_VIRTUEMART_FEATURED_PRODUCT</option>
+						<option value="latest">COM_VIRTUEMART_LATEST_PRODUCT</option>
+						<option value="random">SP_VMSLIDE_RANDOM_PRODUCTS</option>
+					</field>
+
+					<field name="max_items" type="text" default="10"
+						label="SP_VMSLIDE_MAX_ITEMS"
+						description="SP_VMSLIDE_MAX_ITEMS_DESC" />
+					</fieldset>
+
+					<fieldset name="advanced">
+						<field
+							name="layout"
+							type="modulelayout"
+							label="JFIELD_ALT_LAYOUT_LABEL"
+							description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+							<field
+								name="moduleclass_sfx"
+								type="text"
+								label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+								description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+								<field
+									name="loadjquery"
+									type="list"
+									default="0"
+									label="Load JQuery"
+									description="Load JQuery">
+									<option
+										value="1">JYES</option>
+										<option
+											value="0">JNO</option>
+										</field>
+
+										<field
+											name="cache"
+											type="list"
+											default="1"
+											label="COM_MODULES_FIELD_CACHING_LABEL"
+											description="COM_MODULES_FIELD_CACHING_DESC">
+											<option
+												value="1">JGLOBAL_USE_GLOBAL</option>
+												<option
+													value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+												</field>
+
+												<field
+													name="cache_time"
+													type="text"
+													default="900"
+													label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+													description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+													<field
+														name="cachemode"
+														type="hidden"
+														default="static">
+														<option
+															value="static"></option>
+														</field>
+													</fieldset>
+												</fields>
+											</config>
+										</extension>

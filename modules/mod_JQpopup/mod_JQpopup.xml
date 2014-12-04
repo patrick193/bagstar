@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+	<name>Jquery UI Popup</name>
+	<author>Vsmart Extensions</author>
+	<creationDate>May 2011</creationDate>
+	<copyright>Copyright (C) 2005 - 2009 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@vsmart-extensions.com</authorEmail>
+	<authorUrl>www.vsmart-extensions.com</authorUrl>
+	<version>1.0</version>
+	<description>
+		Open automatic dhtml popup content when load site.Use JQuery UI script with many options.
+	</description>
+	<files>
+		<filename module="mod_JQpopup">mod_JQpopup.php</filename>
+		<filename module="mod_JQpopup">index.html</filename>
+		<filename module="mod_JQpopup">helper.php</filename>
+		<filename module="mod_JQpopup">tmpl/default.php</filename>
+		<filename module="mod_JQpopup">tmpl/css/index.html</filename>
+		<filename module="mod_JQpopup">tmpl/index.html</filename>
+		<filename module="mod_JQpopup">tmpl/js/jquery.min.js</filename>
+		<filename module="mod_JQpopup">tmpl/js/jquery-ui.min.js</filename>
+		<filename module="mod_JQpopup">tmpl/js/cookie.js</filename>
+		<filename module="mod_JQpopup">tmpl/js/index.html</filename>
+		<filename module="mod_JQpopup">tmpl/images/index.html</filename>
+		<filename module="mod_JQpopup">element/articles.php</filename>
+		<filename module="mod_JQpopup">element/index.html</filename>
+		<folder>tmpl/css/smoothness</folder>
+		<folder>tmpl/css/blitzer</folder>
+		<folder>tmpl/css/flick</folder>
+		<folder>tmpl/css/le-frog</folder>
+		<folder>tmpl/css/start</folder>
+		<folder>tmpl/css/ui-darkness</folder>
+		<folder>tmpl/css/ui-lightness</folder>
+	</files>
+	<config>
+	<fields name="params">
+	<fieldset addfieldpath="/modules/mod_JQpopup/element" name="basic">
+		<field name="width" type="text" default="400" label="Width" description="Width" />
+		<field name="height" type="text" default="350" label="Height" description="Slide height" />
+		<field name="position" type="text" default="[500,300]" label="Position" description="Position of popup [x,y]" />
+		<field name="time" type="text" default="5000" label="Time auto-close" description="Time to auto close popup" />
+		<field name="time_reopen" type="text" default="1" label="Time re-open" description="Time to open popup again when load page - hours" />
+		<field name="show_effect" type="list" default="bounce" label="Show Effect" description="Effect of popup when show">
+			<option value="bounce">bounce</option>
+			<option value="shake">shake</option>
+			<option value="highlight">highlight</option>
+		</field>
+		<field name="hide_effect" type="list" default="drop" label="Hide Effect" description="Effect of popup when hide">
+			<option value="drop">drop</option>
+			<option value="bounce">bounce</option>
+			<option value="blind">blind</option>
+			<option value="clip">clip</option>
+			<option value="explode">explode</option>
+			<option value="fade">fade</option>
+			<option value="fold">fold</option>
+		</field>
+		<field name="theme" type="list" default="smoothness" label="Theme" description="Select theme for popup">
+			<option value="blitzer">blitzer</option>
+			<option value="flick">flick</option>
+			<option value="le-frog">le-frog</option>
+			<option value="smoothness">smoothness</option>
+			<option value="start">start</option>
+			<option value="ui-darkness">ui-darkness</option>
+			<option value="ui-lightness">ui-lightness</option>
+		</field>
+		<field name="icon" type="list" default="alert" label="Icon" description="Select icon for popup">
+			<option value="alert">alert</option>
+			<option value="info">info</option>
+			<option value="notice">notice</option>
+			<option value="check">check</option>
+			<option value="lightbulb">lightbulb</option>
+			<option value="image">image</option>
+			<option value="video">video</option>
+			<option value="script">script</option>
+			<option value="star">star</option>
+			<option value="heart">heart</option>
+			<option value="home">home</option>
+			<option value="flag">flag</option>
+			<option value="person">person</option>
+			<option value="mail-close">mail</option>
+			<option value="print">print</option>
+		</field>
+		<field name="title" type="text" default="Popup title" label="Title" description="Popup titile" />
+		<field name="content" type="radio" default="module" label="Type of content" description="Type of content show in popup">
+			<option value="module">Module</option>
+			<option value="article">Article</option>
+			<option value="link">External Link</option>
+			<option value="image">Image</option>
+		</field>
+		<field name="module_position" type="text" default="position-12" label="Module Position" description="Module Position" />
+		<field name="article_id" type="articles"  default="" label="Articles" description="Articles" />
+		<field name="showreadmore" type="radio"  default="1" label="Show Readmore" description="Show Readmore Link" >
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+		</field>
+		<field name="link" type="text" default="" label="External Link" description="External Link" size="50" />
+		<field name="image" type="imagelist" directory="images/banners" default="" label="Image" description="Show image" />
+		<field name="ispowerby" type="radio" default="1" label="Show Power by" description="Show power by in popup">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+	</fieldset>
+	<fieldset name="advanced">
+		<field name="class_sfx" type="text" default="" label="Menu Class Suffix" description="PARAMMENUCLASSSUFFIX" />
+		<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+	</fieldset>
+	</fields>
+	</config>
+</extension>

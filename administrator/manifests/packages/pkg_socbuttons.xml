@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="1.7" type="package" method="upgrade">
+	<name>Socbuttons</name>
+	<author>tallib</author>
+	<creationDate>February 2012</creationDate>
+	<url>http://nauca.com.ua</url>
+	<copyright>Copyright (C) 2012 tallib. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.5</version>
+	<packagename>socbuttons</packagename>
+	<packager>tallib</packager>
+	<packagerurl>http://nauca.com.ua</packagerurl>
+	<description>
+		<![CDATA[Installed version 1.5. Download the latest version of the plugin <a target='_blank' href='http://nauca.com.ua/plugins/socbuttons/'>Social Share Buttons Plugin</a><br />Plugin SocButtons allows you to display in the articles buttons such social networks:<br/><br/>*Google +1<br/>*Facebook<br/>*Twitter<br/>*LinkedIn<br/>*Vkontakte<br/>*Ya.ru<br/>*Odnoklassniki.ru<br/>*My.mail.ru<br/><br/><strong>Donate (PayPal):</strong><br/><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QRU4QGSQDK9Z4' target='_blank'>Go to PayPal</a><br/><br/>]]>
+	</description>
+	<files folder="packages">
+		<file type="plugin" id="socbuttons" group="system">plg_system_socbuttons_v15_J25.zip</file>
+		<file type="plugin" id="socbuttons" group="content">plg_socbuttons_v15_J25.zip</file>
+	</files>
+</extension>

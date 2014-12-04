@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>WOW Slider Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://wowslider.com/" target="_blank">Wow Slider</a> and converted as a Joomla Module by Marius Hogas. WOW Slider is a responsive jQuery image slider with amazing visual effects.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_wowslider">mod_hg_wowslider.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename> 
+		<filename>mod_hg_wowslider.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="slidermanager" label="Slides Manager">
+								
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="media" name="img" value="" label="Browse for image" />
+					<option type="text" name="title" value="" class="input-xlarge" label="Slide Caption" />
+					<option type="texturl" name="url" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+				<!-- Basic settings -->
+				<field type="spacer" class="text-title" label="Slider Settings"/>
+				<field name="effect" type="list" label="Choose Effect" default="fly" description="Choose preffered slide effect">
+					<option value="blast">Blast</option>
+					<option value="fly">Fly</option>
+					<option value="blinds">Blinds</option>
+					<option value="blur">Blur</option>
+				</field>
+				<field name="duration" type="text" label="Transition speed" default="900" description="Slide effect transition speed" />
+				<field name="delay" type="text" label="Slide duration" default="2000" description="" />
+				<field name="width" type="text" label="Slide width" default="1170" description="" />
+				<field name="height" type="text" label="Slide height" default="465" description="" />
+				<field name="cols" type="text" label="Columns (for animation)" default="6" description="" />
+				<field name="autoPlay" type="list" label="Autoplay?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="stopOnHover" type="list" label="Stop on hover" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="loop" type="list" label="Loop ?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="bullets" type="list" label="Enable bullets nav?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="caption" type="list" label="Enable captions?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="controls" type="list" label="Enable nav controls?" default="1" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field name="shadows" type="list" label="Add smooth shadows?" default="curved curved-hz-1" description="Select shadow">
+					<option value="0">No Shadows</option>
+					<option value="lifted">lifted</option>
+					<option value="curled">curled</option>
+					<option value="perspective">perspective</option>
+					<option value="raised">raised</option>
+					<option value="curved">curved</option>
+					<option value="curved curved-vt-1">curved curved-vt-1</option>
+					<option value="curved curved-vt-2">curved curved-vt-2</option>
+					<option value="curved curved-hz-1">curved curved-hz-1</option>
+					<option value="curved curved-hz-2">curved curved-hz-2</option>
+					<option value="lifted rotated">lifted rotated</option>
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

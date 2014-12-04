@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Testimonials Fader Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module will display clients testimonials as an automated fading carousel.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_testimonials_fader">mod_hg_testimonials_fader.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_testimonials_fader.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="modstyle" type="list" label="Choose Style" default="default" description="Choose either Carousel or Fader">
+					<option value="default">Fader</option>
+					<option value="carousel">Carousel</option>
+				</field>
+				
+				<field name="mod_title" type="text" label="Module Title" default="" class="input-xlarge" />
+				<field name="mod_subtitle" type="textarea" rows="3" label="Module SubTitle" default="" class="input-xlarge" filter="raw" />
+				
+				<field type="spacer" label="Fader Settings" class="title" />
+				<field name="timeoutDuration" type="text" label="Animation Duration (ms)" default="5000" description="Timeout Duration (Autoplay)" class="input-small" />
+				<field name="duration" type="text" label="Animation Speed (ms)" default="1500" description="Animation speed" class="input-small" />
+				
+			</fieldset>
+			 
+			<fieldset name="boxes" label="Items Manager" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			
+				<field name="items" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Testimonial Manager" itemnname="Testimonial"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="text" name="name" value="" label="Client Name" description="Add your client/partner name here" />
+					<option type="text" name="position" value="" label="Client Position" description="Add your client/partner company position here" />
+					<option type="textarea" name="testimonial" value="" class="input-xlarge" label="Client Testimonial" description="Add here the client's testimonial" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

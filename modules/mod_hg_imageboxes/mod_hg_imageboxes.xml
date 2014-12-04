@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Image Boxes Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module will present some info boxes with images, title and description in several styles.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_imageboxes">mod_hg_imageboxes.php</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_imageboxes.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<field name="modstyle" type="list" label="Image boxes style" default="1" description="Image boxes style." >
+					<option value="1">Style 1</option>
+					<option value="2">Style 2</option>
+				</field>
+				<field name="perrow" type="text" class="input-mini" label="How many boxes per row" default="3" description="How many boxes should be on each row. " />
+
+			</fieldset>
+			 
+			<fieldset name="boxes" label="Boxes Manager" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			
+				<field name="boxes" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Boxes Manager" itemnname="Box"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="media" name="img" value="" label="Browse for image" />
+					<option type="text" name="title" value="" class="input-xlarge" label="Title" />
+					<option type="texturl" name="linkurl" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option type="text" name="linktext" value="Read More +" class="input-xlarge" label="Link Text" />
+					<option type="textarea" name="desc" value="" class="input-xlarge" label="Description" description="Here you should add the text that will appear under the image and title." rows="5" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

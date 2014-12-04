@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Revolution Slider Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://codecanyon.net/item/slider-revolution-responsive-jquery-plugin/2580848" target="_blank">Revolution Slider</a> by <a href="http://codecanyon.net/user/themepunch" target="_blank">ThemePunch</a> and converted as a Joomla Module by Marius Hogas. Revolution Slider is a jQuery plugin that has awesome effects. Keep in mind this module is a bit hard to configure and there should be at least a middle knowledge level.<br>
+	How this module works:
+	<ul>
+		<li>
+			Create a new category
+		</li>
+		<li>
+			Go to Article Manager and here you have to create articles which basically are the slides. The images etc. are actually layers with different effects. Each element is a shortcode with different parameters.
+		</li>
+		<li>
+			In this module, select the category feed and set the final parameters.
+		</li>
+	</ul>
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_revolutionslider">mod_hg_revolutionslider.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_revolutionslider.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<help key="" />
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="basic">
+				
+				<field name="modstyle" type="list" class="dropdown-select" label="Select Style" description="Choose slider style" default="default">
+					<option value="default">Creative Slider</option>
+					<option value="portfolio_devices">Portfolio Devices</option>
+				</field> 
+								
+				<field type="spacer" label="Source Settings" class="title" />
+				
+				<field name="catid" type="category" extension="com_content" label="Slides Category" description="If you choosed Category Component in the Slider source option, please choose the category that has the slides."  />
+				<field name="count" type="text" default="5" label="Slides Count" description="The number of slides to display (the default is 5)" />
+				<field name="ordering" type="list" default="c_dsc" label="Ordering" description="Recently Added First: order the slides using their creation date // Recently Modified First: order the slides using their modification date // Recently Published First: order the slides using their publication date. // Recently Touched First: order the slides using their modification or creation dates.">
+					<option value="c_dsc">Recently Added First</option>
+					<option value="m_dsc">Recently Modified First</option>
+					<option value="p_dsc">Recently Published First</option>
+					<option value="mc_dsc">Recently Touched First</option>
+					<option value="ordering">Ordering</option>
+				</field>
+				<field type="spacer" hr="true" />
+				
+				<field type="spacer" label="Slider Settings" class="title" />
+				<field name="delay" type="text" default="9000" label="Delay time (ms)" description="The time one slide stays on the screen in Milliseconds (Default: 9000)" class="input-mini" />
+				<field name="showBullets" type="list" class="dropdown-select" label="Show Bullets?" description="Hide navigation bullets?" default="bullet">
+					<option value="bullet">JYes</option>
+					<option value="none">JNo</option>
+				</field> 
+				<field name="onHoverStop" type="list" class="dropdown-select" label="Stop on hover?" description="Stop Banner Timet at Hover on Slide on/off" default="on">
+					<option value="on">JYes</option>
+					<option value="off">JNo</option>
+				</field>
+				<field name="touchenabled" type="list" class="dropdown-select" label="Enable Swipe?" description="Enable Swipe Function : on/off" default="on">
+					<option value="on">JYes</option>
+					<option value="off">JNo</option>
+				</field>
+				<field name="enableParallax" type="list" class="dropdown-select" label="Enable Parallax?" description="Enable Parallax" default="1">
+					<option value="1">JYes</option>
+					<option value="0">JNo</option>
+				</field>
+				<field name="maxheight" type="text" default="600" label="Maximum Height" description="How tall will it strech?" class="input-small" />
+
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

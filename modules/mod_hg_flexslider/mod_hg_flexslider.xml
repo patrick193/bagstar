@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Flex Slider Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://flexslider.woothemes.com/" target="_blank">Flex Slider</a> by <a href="https://woothemes.com" target="_blank">WooThemes</a> and converted as a Joomla Module by Marius Hogas. Flexslider is probabil the best responsive slider at this moment.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_flexslider">mod_hg_flexslider.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_flexslider.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="slidermanager" label="Slides Manager">
+								
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="media" name="img" value="" label="Browse for image" />
+					<option type="text" name="title" value="" class="input-xlarge" label="Slide Caption" />
+					<option type="texturl" name="url" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option type="spacer" label="Fancy Slider Options:" />
+					<option type="text" name="color" value="" class="input-xlarge" label="Slide Bg Color" placeholder="ex: #699100" description="Slide background color, only applies to Fancy Slider Style!!" />
+					
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+				<!-- Basic settings -->
+				<field type="spacer" class="text-title" label="Slider Settings"/>
+				
+				<field name="modstyle" type="list" label="Slider Style" default="default" description="Select slider style">
+					<option value="default">Default</option>
+					<option value="fancy">Fancy Slider</option> 
+					<option value="laptop">Laptop Slider</option>
+				</field>
+				
+				<field name="animation" type="list" label="Animation" default="fade" description="Select your animation type, fade or slide">
+					<option value="fade">Fade</option>
+					<option value="slide">Slide</option>
+				</field>
+				<field name="slideDirection" type="list" label="Slide direction" default="horizontal" description=" Select the sliding direction">
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
+				</field>
+				<field name="slideshow" type="list" label="Autoplay?" default="1" description="Animate slider automatically">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slideshowSpeed" type="text" label="Slideshow Speed" default="7000" description="Set the speed of the slideshow cycling, in milliseconds" />
+				<field name="animationDuration" type="text" label="Animation Duration" default="600" description="Set the speed of animations, in milliseconds" />
+				
+				<field name="directionNav" type="list" label="Enable Arrows?" default="1" description="Create navigation for previous/next navigation? ">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="controlNav" type="list" label="Enable pagination?" default="true" description="Create navigation for paging control of each clide?">
+					<option value="true">Bullets</option>
+					<option value="thumbnails">Thumbnails</option>
+					<option value="false">None</option>
+				</field>
+				<field name="keyboardNav" type="list" label="Keyboard Nav?" default="1" description="Allow slider navigating via keyboard left/right keys">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="mousewheel" type="list" label="Mousewheel Nav?" default="0" description="Allows slider navigating via mousewheel">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="randomize" type="list" label="Randomize?" default="0" description="Randomize slide order">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slideToStart" type="text" label="Slide to start" default="0" description=" The slide that the slider should start on. Array notation (0 = first slide)" />
+				<field name="animationLoop" type="list" label="Animation Loop?" default="1" description=" Should the animation loop? If false, directionNav will received disable classes at either end"> 
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pauseOnHover" type="list" label="Pause on Hover?" default="0" description="Pause the slideshow when hovering over slider, then resume when no longer hovering">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="shadows" type="list" label="Add smooth shadows?" default="curved curved-hz-1" description="Select shadow">
+					<option value="0">No Shadows</option>
+					<option value="lifted">lifted</option>
+					<option value="curled">curled</option>
+					<option value="perspective">perspective</option>
+					<option value="raised">raised</option>
+					<option value="curved">curved</option>
+					<option value="curved curved-vt-1">curved curved-vt-1</option>
+					<option value="curved curved-vt-2">curved curved-vt-2</option>
+					<option value="curved curved-hz-1">curved curved-hz-1</option>
+					<option value="curved curved-hz-2">curved curved-hz-2</option>
+					<option value="lifted rotated">lifted rotated</option>
+				</field>
+				<field name="showOnMouseover" type="list" label="Hide controls on idle?" default="1" description="Hide controls on idle?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field type="spacer" label="Laptop slider" class="title"/>
+				<field name="modtitle" type="textarea" rows="4" filter="raw" label="Top Title" class="input-xlarge"/>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

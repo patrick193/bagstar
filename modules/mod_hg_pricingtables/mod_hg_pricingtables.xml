@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Pricing Table Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module will display pricing tables in various forms an colors.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_pricingtables">mod_hg_pricingtables.php</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_pricingtables.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="hasSpaces" type="radio" label="Has Spaces?" description="Add spaces between the columns?" default="0">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field type="spacer" label="Caption Column Settings" class="title" />
+				<field name="hasCaptCol" type="radio" label="Has Caption Column?" description="Enable Caption column? This is the first column that appears on the left " default="0">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="captColTitle" type="text" label="Caption Column Title" default="choose plan" class="input-xlarge" description="The title that appears first, bolded."/>
+				<field name="captColFeatures" type="textarea" label="Caption Column Features" default="" class="input-xlarge" rows="6" description="The content that appears first in the column. Add each feature on new line."/>
+				
+				<field name="roundedCorners" type="radio" label="Rounded corners?" description="Enable rounded corners?" default="0">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field name="mastercolor" type="list" label="Master Color" description="This will override the colors even though they are selected in the items." default="0">
+					<option value="0">Don't Override</option>
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+					<option value="turquoise">Turquoise</option>
+					<option value="orange">Orange</option>
+					<option value="purple">Purple</option>
+					<option value="yellow">Yellow</option>
+					<option value="green_lemon">Green Lemon</option>
+					<option value="dark">Dark</option>
+					<option value="light">Light</option>
+				</field>
+			</fieldset>
+			 
+			<fieldset name="tables" label="Pricing Tables Manager" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			
+				<field name="tables" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Pricing Table Manager" itemnname="Column"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="select" name="color" label="Choose color" description="Choose column color" value="red">
+						[{"name":"Red", "value":"red"}, {"name":"Blue", "value":"blue"}, {"name":"Green", "value":"green"}, {"name":"Turquoise", "value":"turquoise"}, {"name":"Orange", "value":"orange"}, {"name":"Purple", "value":"purple"}, {"name":"Yellow", "value":"yellow"}, {"name":"Green Lemon", "value":"green_lemon"}, {"name":"Dark", "value":"dark"}, {"name":"Light", "value":"light"}]
+					</option>
+					<option type="select" name="featured" label="Is Featured?" description="Highlight this color?" value="0">
+						[{"name":"No", "value":"0"}, {"name":"Yes", "value":"1"}]
+					</option>
+					<option type="text" name="title" value="" class="input-xlarge" label="Title" />
+					<option type="text" name="price" value="" class="input-small" label="Price" />
+					<option type="text" name="per" value="" class="input-xlarge" label="Per ?" description="Per month, per year?" />
+					<option type="texturl" name="linkurl" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option type="text" name="linktext" value="ORDER NOW" class="input-xlarge" label="Link Text" />
+					<option type="textarea" name="features" value="" class="input-xlarge" label="Features" rows="6" description="Add each feature as new line" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

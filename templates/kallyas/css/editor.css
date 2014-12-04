@@ -1,0 +1,10 @@
+/* EDITOR CSS
+*********************************************/
+body {background-color:#fff; color:#000; font:normal normal normal 85%/125% arial,sans-serif;}
+
+.alignleft {float:left; margin:5px 15px 15px 0;}
+.alignright {float:right; margin:5px 0 15px 15px ;}
+.hoverborder {}
+
+img.alignleftborder {float:left; margin:5px 15px 15px 0; position:relative;  -webkit-box-shadow:0 0 3px rgba(0,0,0,0.3); -moz-box-shadow:0 0 3px rgba(0,0,0,0.3); box-shadow:0 0 3px rgba(0,0,0,0.3);}
+img.alignrightborder {float:right; margin:5px 0 15px 15px ; position:relative; -webkit-box-shadow:0 0 3px rgba(0,0,0,0.3); -moz-box-shadow:0 0 3px rgba(0,0,0,0.3); box-shadow:0 0 3px rgba(0,0,0,0.3);}

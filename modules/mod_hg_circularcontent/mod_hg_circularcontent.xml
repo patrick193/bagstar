@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>CircularContent Slider Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://tympanus.net/codrops/2011/08/16/circular-content-carousel/" target="_blank">CIRCULAR CONTENT CAROUSEL WITH JQUERY</a> by <a href="http://tympanus.net/codrops/" target="_blank">Codrops</a> and converted as a Joomla Module by Marius Hogas. This is a really nice carousel jquery plugin and the idea is to have some content boxes that we can slide infinitely (circular). 
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_circularcontent">mod_hg_circularcontent.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_circularcontent.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="slidermanager" label="Slides Manager">
+				<!--
+				to do:
+				- img
+				- title
+				- desc // will not appear in alternative layout
+				- price // ex: starting from $299
+				- article
+				- bullet color // ex: #cd2122
+				- bullet arrow // top-left / top-right / bottom-left / bottom-right / top / right / left / bottom
+				- bullet position // ex: right: 15px; top: 170px;
+				- baloon size // large / medium / small
+				
+				To do settings:
+				- more label
+				- bg color
+				- 
+				-->		
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option name="vals" type="hidden" value="" />
+					<option name="img" type="media" value="" label="Browse for image" description="Will be used as head image in the Default layout. Will be used as background image in the Alternative layout." />
+					<option name="title" type="text" value="" label="Title" description="Will be used as a normal title in Default Layout and baloon text in Alternative Layout." class="input-xlarge" />
+					<option name="price" type="text" value="" label="Price text" description="The price text that will appear in the bottom" class="input-xlarge" placeholder="ex: starting from $299" />
+					<option name="article" type="sql" value="0" class="input-xlarge" label="Select Article" description="This article will be shown inside the pop-up panel." query="SELECT id, title FROM #__content" key_field="id" value_field="title" />
+					
+					<option type="spacer" label="Alternative layout options:" value="" />
+					<option name="color" type="text" value="" label="Ballon Color" placeholder="ex: #699100" description="Baloon background color." class="input-xlarge" />
+					<option name="arrow" type="select" value="top-left" label="Ballon Arrow Pos" description="Baloon arrow position" class="input-xlarge">
+						[{"name":"Top Left", "value":"top-left"}, {"name":"Top Right", "value":"top-right"}, {"name":"Bottom Left", "value":"bottom-left"}, {"name":"Bottom Right", "value":"bottom-right"}, {"name":"Top", "value":"top"}, {"name":"Right", "value":"right"}, {"name":"Left", "value":"left"}, {"name":"Bottom", "value":"bottom"}]
+					</option>
+					<option name="position" type="text" value="" label="Ballon Position" placeholder="ex: right: 15px; top: 170px;" description="Baloon position. Pure CSS, add left top or top right, bottom left etc." class="input-xlarge" />
+					<option name="size" type="select" value="" label="Ballon Size" class="input-xlarge" >
+						[{"name":"Large", "value":"large"}, {"name":"Medium", "value":"medium"}, {"name":"Small", "value":"small"}]
+					</option>
+					
+					<option type="spacer" label="Default layout options:" value="" />
+					<option name="desc" type="textarea" rows="3" value="" label="Description" description="Default layout description text" class="input-xlarge" />
+
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+				<!-- Basic settings -->
+				<field type="spacer" class="text-title" label="Slider Settings"/>
+				
+				<field name="modstyle" type="list" label="Slider Style" default="default" description="Select slider style">
+					<option value="default">Default</option>
+					<option value="alternative">Alternative</option> 
+				</field>
+				
+				<field name="arrows" default="1" type="radio" label="Create arrows?">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="enablemouse" default="1" type="radio" label="Enable Mousewheel scrolling?">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="morelabel" type="text" default="MORE" label="Button label" description="button label for the MORE button." class="input-large" />
+				<field name="bgcolor" type="text" default="#ffffff" label="Item Background color" description="Bg. color of each item. Only used in Default Layout" class="input-large" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

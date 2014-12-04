@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>HG Login Register Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Aug 2012</creationDate>
+	<copyright>Copyright (C) 2012 www.hogash.com</copyright>
+	<license>Commercial module, only available with Sociality template.</license>
+	<authorEmail>mhogas@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is designed to be published inside the "hidden_login" position where it should serve as a login / register / forgot details forms.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_login">mod_hg_login.php</filename>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>mod_hg_login.xml</filename>
+	</files>
+
+	<help key="" />
+
+	<config>
+		<fields name="params" addfieldpath="modules/mod_hg_login/admin/formfield">
+			<fieldset name="basic">
+				<!-- to do
+				- enable registration
+				- enable forget panels
+				
+				-->
+				
+				<field name="login" type="menuitem" disable="separator" label="Login Redirection Page" description="Select the page the user will be redirected to after successfully ending their current session by logging out. Select from all the pages listed in the dropdown menu. Choosing 'Default' will return to the same page." >
+					<option value="">JDEFAULT</option>
+				</field>
+				<field name="logout" type="hidden" default="" />
+				<field name="greeting" type="hidden" default="0" />
+					
+				<field name="name" type="hidden" default="0" />
+				<field name="usesecure" type="radio" default="0" label="Encrypt Login Form" description="Submit encrypted login data (requires SSL).  Do not enable this option if Joomla is not accessible using the https:// protocol prefix.">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field name="registration_enable" type="radio" default="1" label="Enable Registration?" description="Enable Registration panel?">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field name="forget_enable" type="radio" default="1" label="Enable Forget panels?" description="Enable forget panel?">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+			</fieldset>
+			<fieldset name="translations" label="Texts and Labels">
+
+				<field type="biggertitle" label="Login Texts"/>
+				<field name="modlog1" label="Panel title" type="text" default="SIGN IN YOUR ACCOUNT TO HAVE ACCESS TO DIFFERENT FEATURES" description="Title" class="input-xlarge" />
+				<field name="modlog2" label="Create account" type="text" default="CREATE ACCOUNT" description="CREATE ACCOUNT - button title" class="input-xlarge" />
+				<field name="modlog3" label="Username" type="text" default="Username" description="Username - placeholder" class="input-xlarge" />
+				<field name="modlog4" label="Password" type="text" default="Password" description="Password - placeholder" class="input-xlarge" />
+				<field name="modlog5" label="LOG IN" type="text" default="LOG IN" description="LOG IN - button text" class="input-xlarge" />
+				<field name="modlog7" label="FORGOT YOUR PASSWORD?" type="text" default="FORGOT YOUR PASSWORD?" description="FORGOT YOUR PASSWORD? - link label" class="input-xlarge" />
+				
+				<field type="biggertitle" label="Register Texts"/>
+				<field name="modlog8" label="CREATE ACCOUNT" type="text" default="CREATE ACCOUNT" description="CREATE ACCOUNT - title" class="input-xlarge" />
+				<field name="modlog9" label="Username" type="text" default="Username" description="Username - placeholder" class="input-xlarge" />
+				<field name="modlog10" label="Your full name" type="text" default="Your full name" description="Your full name - placeholder" class="input-xlarge" />
+				<field name="modlog11" label="Your email" type="text" default="Your email" description="Your email - placeholder" class="input-xlarge" />
+				<field name="modlog16" label="Verifiy email" type="text" default="Verifiy email" description="Verifiy email - placeholder" class="input-xlarge" />
+				<field name="modlog12" label="Desired password" type="text" default="Desired password" description="Desired password - placeholder" class="input-xlarge" />
+				<field name="modlog13" label="Confirm password" type="text" default="Confirm password" description="Confirm password - placeholder" class="input-xlarge" />
+				<field name="modlog14" label="CREATE MY ACCOUNT" type="text" default="CREATE MY ACCOUNT" description="CREATE MY ACCOUNT - button label" class="input-xlarge" />
+				<field name="modlog15" label="ALREADY HAVE AN ACCOUNT?" type="text" default="ALREADY HAVE AN ACCOUNT?" description="ALREADY HAVE AN ACCOUNT? - text link" class="input-xlarge" />
+				
+				<field type="biggertitle" label="Forget panels Texts"/>
+				<field name="modlog17" label="FORGOT YOUR PASSWORD?" type="text" default="FORGOT YOUR PASSWORD?" description="FORGOT YOUR PASSWORD? - title" class="input-xlarge" />
+				<field name="modlog18" label="Email Address" type="text" default="Email Address" description="Email Address - placeholder" class="input-xlarge" />
+				<field name="modlog19" label="SEND MY DETAILS!" type="text" default="SEND MY DETAILS!" description="SEND MY DETAILS! - button label" class="input-xlarge" />
+				<field name="modlog20" label="Go back to login" type="text" default="AAH, WAIT, I REMEMBER NOW!" description="Go back to login - button link" class="input-xlarge" />
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

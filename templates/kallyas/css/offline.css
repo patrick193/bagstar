@@ -1,0 +1,46 @@
+/* OFFLINE CSS
+*********************************************/
+body, html {width:100%; height:100%;}
+body {font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 13px; line-height: 19px; color: #535353; background-color: #f5f5f5;}
+img  {border:0 none;}
+
+/*offline/comming soon page */
+.offline-page #background {position:absolute; left:0; top:0; right:0; bottom:0;
+background: #ffffff; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#e5e5e5 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
+.offline-page #frame {width: 750px; margin: 0 auto 0; padding-top: 100px; position: relative; z-index:1; color:#eee; }
+.offline-page #frame.hasMessages {padding-top: 45px;}
+.offline-page .containerbox {background: #000; background: rgba(0,0,0,0.7); padding: 25px; position: relative; -webkit-box-shadow: 0 10px 20px #CCC; -moz-box-shadow: 0 10px 20px #CCC; box-shadow: 0 10px 20px #CCC; border-bottom:5px solid #cd2122; color:#eee; }
+.offline-page #logo {float:left; text-align:center; position: absolute; top: 30%;}
+.offline-page .content {margin-left:200px; border-left:1px solid #777; padding-left:20px; }
+.offline-page .containerbox:after {content: ''; position: absolute; bottom: -25px; left: 100px; border-top: 20px solid #cd2122; border-right: 20px solid transparent; z-index:2;}
+.offline-page .ud_counter{margin: 40px 0;}
+.offline-page .ud_counter ul{display:inline-block;margin:0;padding:0;list-style:none}
+.offline-page .ud_counter ul li{display:inline-block; margin:0 0 0 18px; font-size:22px; font-weight:700; padding:15px 10px; width:60px; text-align:center; background:rgba(0,0,0,0.2); -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px;}
+.offline-page .ud_counter ul li:first-child {margin-left:0;}
+.offline-page .ud_counter ul li span{display:block;font-size:13px; margin-top: 17px; line-height: 1;}
+.offline-page .ud_counter ul li.till_lauch {height: 80px; width:80px; padding:0; vertical-align:top;}
+
+.offline-page #mail_when_ready {float:left; margin: 0;}
+.offline-page #mail_when_ready input[type=submit] {vertical-align:top;}
+
+.offline-page .newsletter-signup {float:left; margin: 0 10px 0 0;;}
+.offline-page .newsletter-signup #nl-email {width:180px;}
+
+.offline-page .social-icons li {margin:0 0 0 10px; }
+.offline-page #frame > form {padding: 10px 10px; background: #ccc; background: rgba(235, 235, 235, 0.7);}
+.offline-page #frame > form input[type=text],
+.offline-page #frame > form input[type=password] {margin-bottom:0;}
+.offline-page #frame > form input[type=text] {margin-right:20px;}
+.offline-page #frame > form .remember-field {display: inline-block; line-height: 30px; background:transparent; margin: 0 20px; width:110px; font-size:11px; color: #333; text-transform: uppercase; }
+.offline-page #frame > form .remember-field label {display:inline-block; font-size:11px;}
+.offline-page #frame > form .remember-field input {display:inline-block; width:auto; vertical-align: middle; margin: -3px 0 0 10px;}
+
+.offline-page #system-message-container {width: 750px; margin: 0 auto; position: relative; z-index: 1; padding-top: 20px;}
+.offline-page #system-message {margin:0}

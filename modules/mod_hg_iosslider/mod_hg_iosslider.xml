@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>IOS Slider Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://iosscripts.com/iosslider/" target="_blank">IOS Slider</a> by <a href="https://twitter.com/marcwhitbread" target="_blank">Marc Whitbread</a> and converted as a Joomla Module by Marius Hogas. iosSlider is a jQuery plugin which allows you to integrate a customizable, cross-browser content slider into your web presence. 
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_iosslider">mod_hg_iosslider.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_iosslider.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<help key="" />
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			<fieldset name="basic" label="Slider Manager">
+								
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="media" name="img" value="" label="Browse for image" />
+					<option type="text" name="title" value="" class="input-xlarge" label="Slide Main Title" />
+					<option type="text" name="bigtitle" value="" class="input-xlarge" label="Slide Big Title" />
+					<option type="text" name="smalltitle" value="" class="input-xlarge" label="Slide Small Title" />
+					<option type="texturl" name="url" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+					<option type="select" name="captionstyle" label="Caption Style" description="Choose the caption's style" value="style1" class="input-xlarge dropdown-select">
+						[{"name":"Style 1", "value":"style1"}, {"name":"Style 2", "value":"style2"}, {"name":"Style 3", "value":"style3"}]
+					</option>
+					<option type="select" name="captionposition" label="Caption Position/Animation" description="Choose the caption's starting direction" value="fromleft" class="input-xlarge dropdown-select">
+						[{"name":"From Left", "value":"fromleft"}, {"name":"From Right", "value":"fromright"}]
+					</option>
+				</field>
+				
+				
+			</fieldset>
+			<fieldset name="settings" label="Slider Settings">
+				<!-- Basic settings -->
+				<field type="spacer" class="text-title" label="Basic Slider Settings"/>
+				<field name="maxheight" type="text" class="input-mini" label="Maximum height (px)" description="This height ends up being your maximum height. If you want it to scale forever, set it to a very high number." default="800"/>
+				<field name="desktopClickDrag" type="list" class="dropdown-select" label="Desktop Click Drag?" description="Desktop click and drag fallback for the desktop slider." default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="keyboardControls" type="list" class="dropdown-select" label="Keyboard Controls?" description="Left/right keyboard arrows can be used to navigate the slider." default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="scrollbar" type="list" class="dropdown-select" label="Show Scrollbar?" description="Show or hide the scrollbar. Note: if Infinite slider is enabled, the scrollbar won't appear." default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="hideControls" type="list" class="dropdown-select" label="Hide Nav Controls?" description="Hide Controls?" default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="hideBullets" type="list" class="dropdown-select" label="Hide Bullets/Thumbs?" description="Hide navigation bullets?" default="false">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="bulletsType" type="list" class="dropdown-select" label="Bullets type" description="Bullets navigation, either thumb tray or bullets." default="bullets">
+					<option value="bullets">Bullets</option>
+					<option value="thumbs">Thumbs</option>
+				</field>
+				<field name="hideCaptions" type="list" class="dropdown-select" label="Hide captions?" description="Hide captions?" default="false">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="infiniteSlider" type="list" class="dropdown-select" label="Infinite slider?" description="Makes the slider loop in both directions infinitely with no end. When set to true, the option scrollbar is automatically disabled." default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="autoSlide" type="list" class="dropdown-select" label="Autoplay?" description="Enables automatic cycling through slides." default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="autoSlideTimer" type="text" class="input-mini" label="Autoplay timer (ms)" description="the time (in milliseconds) that a slide will wait before automatically navigating to the next slide." default="5000"/>
+				<field name="autoSlideTransTimer" type="text" class="input-mini" label="Slide speed (ms)" description="the time (in milliseconds) required for all automatic animations to move between slides." default="750"/>
+				<field name="startAtSlide" type="text" class="input-mini" label="Start at slide" description="Current slide when slider is initially loaded." default="1"/>
+				<field name="nextlabel" type="text" class="input-xlarge" label="Next text label" description="The label of the next button" default="NEXT"/>
+				<field name="prevlabel" type="text" class="input-xlarge" label="Prev text label" description="The label of the prev button" default="PREV"/>
+				<field name="startFaded" type="radio" label="Start Faded" description="Start slider with a faded effect?" default="0">
+					<option value="1">JYes</option>
+					<option value="0">JNo</option> 
+				</field>
+				<field name="fixedWidth" type="radio" label="Fixed Width?" description="Give the slider a fixed width? Note: Will NOT work correctly if Start faded is enabled." default="0">
+					<option value="1">JYes</option>
+					<option value="0">JNo</option> 
+				</field>
+				
+				<!-- Advanced settings-->
+				<field type="spacer" class="text-title" label="Advanced Slider Settings"/>
+				<field type="spacer" label="Edit only if you know what you're doing!"/>
+				<field name="elasticPullResistance" type="text" class="input-mini" label="Elastic pull resistance" description="(decimal, 0.0 - 1.0) The elastic resistance when pulling on the slider edge." default="0.6"/>
+				<field name="frictionCoefficient" type="text" class="input-mini" label="Friction coefficient" description="(decimal, 0.0 - 1.0) The friction coefficient applied to the momentum on touch release affecting the rate of deceleration." default="0.92"/>
+				<field name="elasticFrictionCoefficient" type="text" class="input-mini" label="Elastic friction coefficient" description="(decimal, 0.0 - 1.0) Additonal friction coefficient applied when momentum/user moves slides outside the bounds of the slider." default="0.6"/>
+				<field name="snapFrictionCoefficient" type="text" class="input-mini" label="Snap friction coefficient" description="(decimal, 0.0 - 1.0) Friction applied to the slider when snapping to an element." default="0.92"/>
+				<field name="snapToChildren" type="list" class="dropdown-select" label="Snap to children?" description="Slider will slide to the closest child element on touch release." default="true">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+				<field name="snapSlideCenter" type="list" class="dropdown-select" label="Snap slide center?" description="When this option is enabled, this will snap the slide to the center of the draggable area." default="false">
+					<option value="true">JYes</option>
+					<option value="false">JNo</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

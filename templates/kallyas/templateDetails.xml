@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+
+<extension version="2.5" type="template" client="site" method="upgrade">
+	
+	<name>kallyas</name>
+	<creationDate>2013-02-05</creationDate>
+	<author>Marius Hogas</author>
+	<copyright>Copyright © hogash.com</copyright>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>http://www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[ 
+		<h1>Kallyas Template for Joomla</h1>
+		<p>Created by <a href="http://www.hogash.com" target="_blank">Marius Hogas | hogash.com</a>.</p>
+	]]></description>
+	
+	<files>
+		<folder>addons</folder>
+		<folder>admin</folder>
+		<folder>css</folder>
+		<folder>custom</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>lib</folder>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>footer.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB.tpl_kallyas.ini</language>
+	</languages>
+	
+	<positions>
+		<position>support</position>
+		<position>hidden_login</position>
+		<position>top_pos</position>
+		<position>cart_pos</position>
+		<position>languages</position>
+		<position>slideshow</position>
+		<position>breadcrumb</position>
+		<position>action_box</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>user5</position>
+		<position>user6</position>
+		<position>user7</position>
+		<position>user8</position>
+		<position>user9</position>
+		<position>user10</position>
+		<position>sidebar_left</position>
+		<position>sidebar_right</position>
+		<position>user11</position>
+		<position>user12</position>
+		<position>user13</position>
+		<position>user14</position>
+		<position>user15</position>
+		<position>user16</position>
+		<position>user17</position>
+		<position>footer1</position>
+		<position>footer2</position>
+		<position>debug</position>
+	</positions>
+	
+	<config>
+		<fields name="params" addfieldpath="templates/kallyas/admin/fields"> 
+
+			<fieldset name="basic-kaltheme" label="Template settings">
+			
+				<field type="templateasset" path="/templates/kallyas/admin/" />
+				
+				<field name="modernizr" class="btn-group" type="radio" default="1" label="Modernizr" description="Enable JavaScript modernizr.js in head (Recommended enabled)">
+  					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+  				</field>
+				
+  				<field name="pie" class="btn-group" type="radio" default="1" label="PIE" description="Enable PIE (CSS3 for IE 8+)">
+  					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+  				</field>
+				
+				<field name="load_mootools" class="btn-group" type="radio" default="0" label="Load Mootools?" description="Load Mootools library? Maybe you are not using any mootools dependent extension so it's better to unload it for pagespeed purposes.">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				
+				<field name="component_enabled" class="btn-group" type="radio" default="1" label="Display Component?" description="Turning this off stops the main component from displaying on the homepage. This can be useful if you would like to build your homepage from modules only.">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				
+				<field name="compresscss" class="btn-group" type="radio" default="0" label="Compress Css stylesheets?" description="If enabled you will gain a huge speed advance. Best to be OFF when developing on the template.">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+
+				<field name="demopanel" class="btn-group" type="radio" default="0" label="Enable DEMO Panel?" description="Enable the demo panel? Built mostly for demo purposes">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field type="spacer" hr="false" />
+				
+				<!-- Menu settings -->
+				<field type="spacer" class="text-title" label="Menu settings"/>
+				<field name="menutype" type="menu" label="Default Menu" description="Select a menu in the list" />
+				<field name="animation" type="list"  default="{opacity:'show'}" label="Animation"  description="How the dropdown menu will be displayed." filter="RAW" >
+					<option value="{height:'show'}">Slide Down</option>
+					<option value="{width:'show'}">Slide Right</option>
+					<option value="{width:'show', height:'show'}">Slide Down and Right</option>
+					<option value="{opacity:'show'}">Fade In</option>
+					<option value="{opacity:'show', height:'show'}">Fade In, Slide Down</option>
+					<option value="{opacity:'show', width:'show'}">Fade In, Slide Right</option>
+					<option value="{opacity:'show', height:'show', width:'show'}">Fade In, Slide Down and Right</option>
+				</field>
+				<field name="speed" type="text" filter="RAW" default="300" label="Animation Speed" description="Speed of the animation. slow, fast, def, or the number of milliseconds" />
+				<field name="delay" type="text" default="200" label="mouseOut Delay" description="The delay in milliseconds that the mouse can remain outside a submenu without it closing." />
+				<field name="startLevel" type="list" default="1" label="Start Level" description="Level to start rendering the menu at. Setting the start and end levels to the same # and setting 'Show Sub-menu Items' to yes will only display that single level." >
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="endLevel" type="list" default="0" label="End Level" description="Level to stop rendering the menu at. If you choose 'All', all levels will be shown depending on 'Show Sub-menu Items' setting." >
+					<option value="0">JALL</option>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="showAllChildren" type="radio" default="0" label="Show Sub-menu Items" description="Expand the menu and make its sub-menu items always visible.">
+					<option	value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="has_chaser" class="btn-group" type="radio" default="1" label="Enable Chaser Menu?" description="This feature will add a secondary menu cloned from the main menu. It will appear only on scrolling.">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="mobilemenu" class="btn-group" type="radio" default="1" label="Enable Mobile Menu?" description="This feature will switch the current menu into a select list when the page is resized/viewed on mobiles.">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field type="spacer" hr="false" />
+				
+				<!-- Font settings (Body) -->
+				<field type="spacer" class="text-title" label="Font settings (Body)"/>
+				<field name="font_body_websafe" type="list" default="Arial, Helvetica, sans-serif" label="Select font (Websafe)" disabled="true" description="Select a websafe font">
+					<option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+					<option value="'Arial Black', Gadget, sans-serif">"Arial Black", Gadget, sans-serif</option>
+					<option value="'Comic Sans MS', cursive, sans-serif">"Comic Sans MS", cursive, sans-serif</option>
+					<option value="Impact, Charcoal, sans-serif">Impact, Charcoal, sans-serif</option>
+					<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif">"Lucida Sans Unicode", "Lucida Grande", sans-serif</option>
+					<option value="Tahoma, Geneva, sans-serif">Tahoma, Geneva, sans-serif</option>
+					<option value="'Trebuchet MS', Helvetica, sans-serif">"Trebuchet MS", Helvetica, sans-serif</option>
+					<option value="Verdana, Geneva, sans-serif">Verdana, Geneva, sans-serif</option>
+					<option value="'Times New Roman', Times, serif">"Times New Roman", Times, serif</option>
+					<option value="Georgia, serif">Georgia, serif</option>
+				</field>
+				<field name="font_body_google_enable" class="btn-group" type="radio" default="1" label="Enable Google Fonts?" description="Enable Google fonts to be embed in your website?">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="font_body_google" type="font" default="Open+Sans" label="Select Font (Google)" description="The font will be loaded from Google's Webfont list. It will automatically override the webfont" />
+				<field name="font_body_google_style" type="text" label="Font Styles" default="400,400italic,700" class="input-xlarge" description="These are the font weight sizes. You must add them separated with comma. The font weight sizes are: 200, 300, 400, 500, 700, 800, 900 >> 200 means ultra-thin, 900 means ultra bold. Please check first the google fonts website to see how many styles does this font has." />
+				<field name="font_body_selectors" type="textarea" label="Affected Css Selectors" default="body, h1, h2, h3, h4, h5, h6" description="Write here the css selectors that will have the google font applied. Separate with comma." rows="4" cols="70" class="input-xlarge" />
+				<field type="spacer" hr="false" />
+				
+				<!-- Font settings (Various Elements) -->
+				<field type="spacer" class="text-title" label="Font settings (Various Elements)"/>
+				<field name="font_elems_websafe" type="list" default="Arial, Helvetica, sans-serif" label="Select font (Websafe)" disabled="true" description="Select a websafe font">
+					<option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+					<option value="'Arial Black', Gadget, sans-serif">"Arial Black", Gadget, sans-serif</option>
+					<option value="'Comic Sans MS', cursive, sans-serif">"Comic Sans MS", cursive, sans-serif</option>
+					<option value="Impact, Charcoal, sans-serif">Impact, Charcoal, sans-serif</option>
+					<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif">"Lucida Sans Unicode", "Lucida Grande", sans-serif</option>
+					<option value="Tahoma, Geneva, sans-serif">Tahoma, Geneva, sans-serif</option>
+					<option value="'Trebuchet MS', Helvetica, sans-serif">"Trebuchet MS", Helvetica, sans-serif</option>
+					<option value="Verdana, Geneva, sans-serif">Verdana, Geneva, sans-serif</option>
+					<option value="'Times New Roman', Times, serif">"Times New Roman", Times, serif</option>
+					<option value="Georgia, serif">Georgia, serif</option>
+				</field>
+				<field name="font_elems_google_enable" class="btn-group" type="radio" default="1" label="Enable Google Fonts?" description="Enable Google fonts to be embed in your website?">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="font_elems_google" type="font" default="Lato" label="Select Font (Google)" description="The font will be loaded from Google's Webfont list. It will automatically override the webfont" />
+				<field name="font_elems_google_style" type="text" label="Font Styles" default="300,400,700,900" class="input-xlarge" description="These are the font weight sizes. You must add them separated with comma. The font weight sizes are: 200, 300, 400, 500, 700, 800, 900 >> 200 means ultra-thin, 900 means ultra bold. Please check first the google fonts website to see how many styles does this font has." />
+				<field name="font_elems_selectors" type="textarea" label="Affected Css Selectors" default="div.pp_kalypso .ppt,
+.flex-caption,
+.nivo-caption,
+.info_pop .text, .playVideo,
+.textpop-style .texts > span,
+.ud_counter ul li,
+.video-container .captions .line,
+.newsletter-signup input[type=submit],
+.page-title,
+.subtitle,
+#sidebar .title,
+.shop-latest .tabbable .nav li a,
+.topnav > li > a,
+nav#main_menu > ul > li > a,
+.pricing_table .tb_header h4,
+.pricing_table .price,
+.process_box .number span,
+.shop-features .shop-feature,
+.shop-features .shop-feature > h4,
+.shop-features .shop-feature > h5" description="Write here the css selectors that will have the google font applied. Separate with comma." rows="10" cols="70" class="input-xlarge" />
+				<field type="spacer" hr="false" />
+				
+				<!-- LOGO settings (Body) -->
+				<field type="spacer" class="text-title" label="Logo settings"/>
+				<field name="logo" type="media"	label="Upload your logo" description="Upload your own logo" />
+				<field name="logo_width" type="text" label="Logo Width (px)" class="input-small" description="If autosize disabled, add the logo's sizes manually" />
+				<field name="logo_height" type="text" label="Logo Height (px)" class="input-small" description="If autosize disabled, add the logo's sizes manually" />
+				<field name="logo_autosize" default="1" label="Autosize Logo?" class="btn-group" type="radio" description="Autosize the logo? If so, there's no need to add the values below in width and height.">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="logo_type" default="image" label="Logo Type" class="btn-group" type="radio" description="What kind of logo should it be displayed, text or image. If Text, the LOGO ALT option below will be displayed.">
+					<option value="image">Use Image</option>
+  					<option value="text">Use Text</option>
+				</field>
+				<field name="logo_title" type="text" label="Logo Title (Accessibility)" class="input-xlarge" default="Click to return to Homepage of Your Website" description="Add here a title value (eg: Click for returning back). According to Google's Matt Cutts The alt attribute is for SEO and the title attribute is for accessibility." />
+				<field name="logo_alt" type="text" label="Logo Alt (SEO)" class="input-xlarge" default="Your Website Title" description="Add here an alt value (eg: Your Website Title). According to Google's Matt Cutts The alt attribute is for SEO and the title attribute is for accessibility." />
+				<field type="spacer" hr="false" />
+				
+				<!-- Favicons -->
+				<field type="spacer" class="text-title" label="Favicons"/>
+				<field name="favicon" type="media" label="Favicon (16x16px)" description="Standard favicon (png)" />
+				<field name="favicon_appl_touch" type="media" label="iPhone Favicon (57x57px)" description="Standard iPhone Favicon (png)" />
+				<field name="favicon_appl_touch72" type="media" label="iPad Favicon (72x72px)" description="iPad (png)" />
+				<field name="favicon_appl_touch114" type="media" label="Retina Favicon (114x114px)" description="Retina iPhone (png)" />
+				<field type="spacer" hr="false" />
+				
+				<!-- Google Analytics -->
+				<field type="spacer" class="text-title" label="Google Analytics"/>
+  				<field name="analytics" type="text" default="" label="Google Analytics ID" description="Insert your Google Analytics Code, EG: UA-XXXXXX-XX ." class="input-large" />
+				<field type="spacer" hr="false" />
+				
+				<!-- Search Box -->
+				<field type="spacer" class="text-title" label="Search Box"/>
+				<field name="search" default="1" label="Enable Search" class="btn-group" type="radio" description="Enable search in header?">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="search_text" type="text" default="SEARCH ..." label="Search text" description="The text that will appear as placeholder in the search field" />
+				<field name="set_itemid" type="text" label="Set ItemID" description="Assign an ItemID for the display of the search results if there is no com_search menu and a specific display is desired. The ItemId may be chosen among those available through the Menu Manager. If you do not know what this means, you may not need it." />
+				<field type="spacer" hr="false" />
+				
+				<!-- Other settings -->
+				<field type="spacer" class="text-title" label="Other Settings" />
+				<field name="totop" class="btn-group" type="radio" default="1" label="Scroll to top button?" description="Enable Scroll to Top button?">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="art404" type="sql" default="" label="Select an article for 404 page" query="SELECT id, title FROM #__content" key_field="id" value_field="title">
+					<option value="">-- Please select article --</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced-kaltheme" label="Template Styles &amp; Colors">
+				<field name="body_bg" type="colorpicker" default="#F5F5F5" label="Body Background color" />
+				<field name="body_tcolor" type="colorpicker" default="#535353" label="Body text color" />
+				<field name="footer_bg" type="colorpicker" default="#2F2F2F" label="Footer Background color" />
+				<field name="footer_tcolor" type="colorpicker" default="#D5D5D5" label="Footer text color" />
+				<field name="contentcolor" type="colorpicker" default="#CD2122" label="Main Content Color" description="This will be applied to multiple content elements." />
+				
+				<field name="header_style" default="2" label="Header Style" description="Header styling" type="list">
+					<option value="1">Style 1</option>
+					<option value="2">Style 2 (default)</option>
+					<option value="3">Style 3</option>
+					<option value="4">Style 4</option>
+				</field>
+				<field name="boxed_version" class="btn-group" type="radio" default="0" label="Enable Boxed Layout?" description="Enable boxed layout?">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="responsive" class="btn-group" default="1" label="Enable Responsiveness?" description="Enable resposive layout?" type="radio">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+				<field name="gridsize" default="1170" label="Choose grid size" description="Choose grid size" type="list">
+					<option value="960">960px</option>
+					<option value="1170">1200px (default)</option>
+				</field>
+				<field name="theme" class="btn-group" default="light" label="Choose theme" description="Choose website theme" type="radio">
+					<option value="light">Light</option>
+  					<option value="dark">Dark</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="footer-kaltheme" label="Footer Settings">
+				
+				<field name="dev_mode" type="list" label="Developer mode?" default="0" description="This is added only for development purpose, in case you want to work on this site you will make lots of refresh's and requests and therefore it's better to disable the twitter script and sharing buttons">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<!-- Copyright settings -->
+				<field type="spacer" class="text-title" label="Copyright Settings" />
+				<field name="copyright_text" type="textarea" label="Copyright text" default="" description="Here add the copyright text" rows="4" cols="50" filter="raw" />
+				<field name="copyright_logo" type="media" label="Copyright Logo" default="" description="Upload a small logo that will be add onto the left side of the copyright text." />
+				
+				<!-- Twitter settings -->
+				<field type="spacer" class="text-title" label="Twitter Display Settings" />
+				<field name="twitter_id" type="text" label="Twitter Username" default="" description="Add your twitter username in order to display your latest tweet. Leave blank if you want to disable this feature." />
+				<field name="twitter_follow" type="list" label="Display Follow button" default="1" description="Display the Twitter Follow button under the feed?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<!-- Facebook Like Button -->
+				<field type="spacer" class="text-title" label="Facebook Like Button" />
+				<field name="fblike_url" type="text" label="Facebook Like URL" default="" description="Facebook like URL that will be liked. Make sure you have Facebook SDK option enabled in the next tab." class="input-xlarge" />
+				
+				<!-- Tweet Button -->
+				<field type="spacer" class="text-title" label="Tweet Button" />
+				<field name="twitter_bt_enable" type="list" label="Display Tweet button?" default="1" description="Display the Tweet button?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="twitter_via" type="text" label="Via Twitter ID" default="" description="At the end of the tweet there will be this link... via @yourid , good for promoting." />
+				<field name="twitter_text" type="textarea" cols="50" rows="2" label="Actual tweet message" default="" description="The actual predefined tweet that people will tweet through their profile." />
+				<field name="twitter_hashtag" type="text" label="Hashtag" default="" description="Add a hashtag keyword. This will be attached to the message and will help improving upon search results." placeholder="test" />
+				
+				<!-- GPlus Button -->
+				<field type="spacer" class="text-title" label="Google Plus Button" />
+				<field name="gplus_enable" type="list" label="Display GPlus button?" default="1" description="Display the Gplus button?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				 
+				<!-- Pinterest Button -->
+				<field type="spacer" class="text-title" label="Pinterest Button" />
+				<field name="pin_bt_enable" type="list" label="Display Pinterest button?" default="1" description="Display the Pinterest - Pin IT button?"> 
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pinterest_url" type="text" label="Pin URL" default="" description="URL that will be pinned" class="input-xlarge" />
+				<field name="pinterest_image" type="media" label="Pinterest image" default="" description="Image that will be pinned." />
+				<field name="pinterest_desc" type="text" label="Pinterest Description" default="" description="Description that will be attached to this PIN." class="input-xlarge" />
+				
+				<!-- Social icons settings -->
+				<field type="spacer" class="text-title" label="Social Icons Settings" />
+				<field name="follow_us" type="text" default="Follow us on" label="Follow us Text" class="input-xlarge" />
+				<field name="sico_style" type="list" label="Icons Style" default="normal" description="Select icons style">
+					<option value="normal">Normal</option>
+					<option value="colored">Colored</option>
+					<option value="coloredHov">Colored on hover</option>
+				</field>
+				<field name="sico_title" type="text" label="Title before icons" default="GET SOCIAL" description="The title that will appear on the left side of the icons." class="input-xlarge" />
+				<field name="sico1" type="socialicon" label="Select Icon #1 &amp; URL" description="Select icon and url."/>
+				<field name="sico2" type="socialicon" label="Select Icon #2 &amp; URL" description="Select icon and url."/>
+				<field name="sico3" type="socialicon" label="Select Icon #3 &amp; URL" description="Select icon and url."/>
+				<field name="sico4" type="socialicon" label="Select Icon #4 &amp; URL" description="Select icon and url."/>
+				<field name="sico5" type="socialicon" label="Select Icon #5 &amp; URL" description="Select icon and url."/>
+				<field name="sico6" type="socialicon" label="Select Icon #6 &amp; URL" description="Select icon and url."/>
+				<field name="sico7" type="socialicon" label="Select Icon #7 &amp; URL" description="Select icon and url."/>
+				<field name="sico8" type="socialicon" label="Select Icon #8 &amp; URL" description="Select icon and url."/>
+				<field name="sico9" type="socialicon" label="Select Icon #9 &amp; URL" description="Select icon and url."/>
+				<field name="sico10" type="socialicon" label="Select Icon #10 &amp; URL" description="Select icon and url."/>
+				
+			</fieldset>
+			
+			<fieldset name="basic4-kaltheme" label="Facebook Integration">
+				 <field type="spacer" class="text-title" label="Facebook AppID ( &lt;a href=&quot;http://rieglerova.net/how-to-get-a-facebook-app-id/&quot; target=&quot;_blank&quot;&gt;Get a Facebook AppID&lt;/a&gt; )"/>
+				 <field name="fb_sdk" type="list" label="Load FB SDK code?" default="1" description="Load the Facebook SDK code? This is mandatory for the like button and everything related to facebook integration within your website. Default is YES.">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="fbAppID" type="text" default="" label="Facebook App ID" description="the facebook App ID. If you want to know how to find out your app id, either search on google for: facebook appid, either go to http://rieglerova.net/how-to-get-a-facebook-app-id/." class="input-large" />
+				
+				<field type="spacer" class="text-title" label="Facebook OpenGraph Tags ( &lt;a href=&quot;https://developers.facebook.com/docs/opengraphprotocol/&quot; target=&quot;_blank&quot;&gt;Find out more about Facebook Open Graph&lt;/a&gt; )"/>
+				<field name="og_title" type="text" default="" label="OG Title" description="The title of your object as it should appear within the graph" class="input-large" />
+				<field name="og_type" type="text" default="" label="OG Type" description="The type of your object, e.g., 'movie'. See the complete list of supported types: https://developers.facebook.com/docs/opengraphprotocol/#types " class="input-large" />
+				<field name="og_image" type="media" label="OG Image" description="An image URL which should represent your object within the graph. The image must be at least 50px by 50px (though minimum 200px by 200px is preferred) and have a maximum aspect ratio of 3:1. We support PNG, JPEG and GIF formats. You may include multiple og:image tags to associate multiple images with your page." />
+				<field name="og_url" type="text" default="" label="OG URL" description="The canonical URL of your object that will be used as its permanent ID in the graph, e.g. http://www.imdb.com/title/tt0117500/ " class="input-large" />
+				<field name="og_sitename" type="text" default="" label="OG Site Name" description="A human-readable name for your site, e.g., 'IMDb'." class="input-large" />
+				<field name="og_description" type="text" default="" label="OG Description" description="A one to two sentence description of your page. " class="input-large" />
+				
+			</fieldset>
+			
+			<fieldset name="basic5-kaltheme" label="Offline / Coming soon page">
+				
+				<field name="off_logo" type="media" default="" label="Offline page Logo" description="Logo that will be displayed on the offline page" />
+				<field name="off_content" type="editor" default="" label="Content" description="Content" filter="raw"/>
+				
+			</fieldset>
+			
+		</fields>
+	</config>
+	
+</extension>

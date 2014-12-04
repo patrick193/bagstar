@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Sliding Frames Module</name>
+	<author>Marius Hogas</author>
+	<creationDate>Feb 2013</creationDate>
+	<copyright>Copyright (C) 2013 www.hogash.com</copyright>
+	<license>Commercial module, only available with Kallyas Template.</license>
+	<authorEmail>hogash.themeforest@gmail.com</authorEmail>
+	<authorUrl>www.hogash.com</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+	This module is based on the <a href="http://caroufredsel.dev7studios.com/" target="_blank">CarouFredSel</a> by <a href="http://dev7studios.com" target="_blank">Dev7Studios</a> and converted as a Joomla Module by Marius Hogas. This module/slider will slide multiple frames asynchronously vertically or horizontally.
+	]]></description>
+
+	<files>
+		<filename module="mod_hg_slidingframes">mod_hg_slidingframes.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_hg_slidingframes.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<help key="" />
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/hg_assets/assets/formfield">
+			
+			<fieldset name="slidermanager" label="Slides Manager">
+				<field name="modtitle" type="textarea" rows="4" filter="raw" label="Top Title" class="input-xlarge"/>
+				<field name="slides" type="hgdyno" path="plugins/system/hg_assets/assets/" showpreview="yes" label="Slider Manager" itemnname="Slide"> 
+					<option type="hidden" name="vals" value="" />
+					<option type="spacer" label="Browse for images (~460x320px)"/>
+					<option type="media" name="image1" value="" label="Image #1" />
+					<option type="media" name="image2" value="" label="Image #2" />
+					<option type="media" name="image3" value="" label="Image #3" />
+					<option type="text" name="title" value="" class="input-xlarge" label="Project title" description="Will appear in the middle frame." />
+					<option type="texturl" name="url" value="" class="input-xlarge" label="Link URL" target="_self" description="Here add the url link and select the target window" />
+				</field>
+				
+			</fieldset>
+			
+			<fieldset name="settings" label="Slider Settings">
+				<field name="modstyle" type="list" label="Direction (Style)" default="default" description="Choose direction">
+					<option value="default">Vertical</option>
+					<option value="horizontal">Horizontally</option>
+				</field>
+				<field name="cSpeed" type="text" label="Effect Speed" default="400" />
+				<field name="timeoutDuration" type="text" label="Timeout Duration" default="3000" description="Timing between slides if autoplay enabled (ms)" />
+				<field name="autoplay" type="list" label="Autoplay?" default="0" description="Autoplay slides">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="resize_images" type="list" label="Resize images?" default="0" description="Resize the images to fit well inside the frames?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="animating_frames" type="list" label="Animate frames on hover?" default="1" description="Animate frames on hover?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

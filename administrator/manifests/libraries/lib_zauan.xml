@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="library" version="1.6" method="upgrade">
+	<name>Shorcodes</name>
+	<libraryname>zauan</libraryname>
+	<description></description>
+    <creationDate>September 8, 2011</creationDate>
+    <author>Marius Hogas</author>
+    <authorEmail>mhogas@gmail.com</authorEmail>
+    <authorUrl>http://www.hogash.com</authorUrl>
+    <copyright>(C)2011 Hogash. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>1.0.0</version>
+	<files folder=".">
+        <file>index.html</file>
+        <folder>shortcodes</folder>
+    </files>
+
+</extension>

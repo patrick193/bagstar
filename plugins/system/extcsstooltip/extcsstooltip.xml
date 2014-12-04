@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - EXT CSS3 Tooltip</name>
+	<author>Ext-Joom.com</author>
+	<creationDate>06/05/2014</creationDate>
+	<copyright>Copyright (C) 2011-2014 Ext-Joom.com. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>extjoom@gmail.com</authorEmail>
+	<authoralt>http://www.ext-joom.com/</authoralt>
+	<version>1.0</version>
+	<description>Tooltips are a great way to show your user more information by simply hovering over an image or text.  They can be used, for example, to provide captions for images, or longer descriptions for links, or any useful information which would improve the user experience of your site, without intruding on the design.</description>
+
+	<files>
+		<filename plugin="extcsstooltip">extcsstooltip.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_extcsstooltip.ini</language>
+		<language tag="en-GB">en-GB.plg_system_extcsstooltip.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field type="spacer" label="PLG_SYSTEM_EXTCSSTOOLTIP_SPACER" class="text" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

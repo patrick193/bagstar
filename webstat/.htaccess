@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/bagstar.com.ua/webstat"
+AuthUserFile /var/www/starik3331/data/etc/116790943.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>
